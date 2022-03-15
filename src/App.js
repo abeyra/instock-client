@@ -7,13 +7,14 @@ import WarehouseDetailsPage from './pages/WarehouseDetailsPage/WarehouseDetailsP
 
 export default function App() {
   return (
-    <div className="App">
+    <div>
       <BrowserRouter>
           {/* <HeaderPage /> */}
-          {console.log('test')}
+          
+          {/* {console.log('test')} */}
             <Switch>
               {/* <Route path="/" exact component={HomePage}/> */}
-              <Route path="/warehouses" exact component={WarehouseDetailsPage}/>
+              <Route path="/warehouses/:id" exact component={WarehouseDetailsPage}/>
             </Switch>
         </BrowserRouter>
     </div>

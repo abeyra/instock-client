@@ -1,0 +1,18 @@
+.warehouse__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    &--title {
+        align-items: center;
+    }
+}
+
+.warehouse__container {
+        border-bottom: 1px solid grey;
+        flex-direction: column;
+        margin: 2rem;
+        width: 100%;
+        justify-content: space-around;
+}

@@ -9,42 +9,31 @@ import Edit from '../../assets/Icons/edit-24px.svg'
 
 class WarehouseDetailsPage extends Component {
     state = {
-        chosenWarehouse: [],
-        contact: []
+        chosenWarehouse: {}
+        //contact: []
     }
     getWarehouseById = (id) => {
       axios
       .get(`http://localhost:9000/warehouses/${id}`)
         .then(response => {   
           this.setState({
-              chosenWarehouse: response
+              chosenWarehouse: response.data
               })
-              console.log(response)
             })
             .catch(err => console.log(err))
     }
     componentDidMount() {
       document.title = 'WarehouseDetails'
+      const warehouseId = this.props.match.params.id
       axios
-      .get('http://localhost:9000/warehouses')
-        .then(response => {  
+      .get(`http://localhost:9000/warehouses/${warehouseId}`)
+        .then(response => {   
           this.setState({
-            chosenWarehouse: response.data
-          })
-          const warehouseId = this.props.match.params.warehouseId || response.data.id
-       
-
-          this.getWarehouseById(warehouseId);
-        })
-        .catch(err => console.log(err))
+              chosenWarehouse: response.data
+              })
+            })
+            .catch(err => console.log(err))
         
-    }
-    componentDidUpdate(prevProps, prevState) {
-      const warehouseId = this.props.match.params.id || this.state.chosenWarehouse[0];
-
-      if(prevState.chosenVideo && prevState.chosenVideo.id !== warehouseId) {
-        this.getVideoById(warehouseId)
-      }
     }
 
       
@@ -52,14 +41,34 @@ class WarehouseDetailsPage extends Component {
     return (
         <>
         {/* <HeaderPage/> */}
-        {/* {chosenWarehouse.item.map(item => (
-           <header>
-            <img src={ArrowBack} />
-            <h1>{item.name}</h1>
-            <img src={Edit}/>
+        <header>
+          <div className='warehouse__info'>
+              <h1 className='warehouse_info--title'><img src={ArrowBack}/>{this.state.chosenWarehouse.name}</h1>
+              
+              <img src={Edit}/>
+          </div>
+        <section className='warehouse__container'>
+            <div className='warehouse__consta'>
+                <p>WAREHOUSE ADDRESS:</p>
+                <span>{this.state.chosenWarehouse.address + ', '}</span>
+                <span>{this.state.chosenWarehouse.name + ', '}</span>
+                <span>{this.state.chosenWarehouse.country}</span>
+            </div>
+          <section className='warehouse__contact'>
+              <div>
+                  <p>CONTACT NAME:</p>
+                  <p>{this.state.chosenWarehouse.contact?.name}</p>
+                  <p>{this.state.chosenWarehouse.contact?.position}</p>
+              </div>
+              <div>
+                  <p>CONTACT INFORMATION:</p>
+                  <p>{this.state.chosenWarehouse.contact?.phone}</p>
+                  <p>{this.state.chosenWarehouse.contact?.email}</p>
+              </div>
+          </section>
+        </section>
         </header> 
-        ))} */}
-        {console.log('cao')}
+        
       
       </>
     )
