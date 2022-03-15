@@ -1,7 +1,8 @@
 import './reset.css';
 import './App.scss';
-import HeaderPage from './components/HeaderPage/HeaderPage.jsx';
-import HomePage from './pages/HomePage/HomePage.jsx';
+import HeaderPage from './components/Warehouses/HeaderPage.jsx';
+import Warehouses from './pages/Warehouses/Warehouses.jsx';
+import Inventory from './pages/Inventory/Inventory.jsx';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 export default function App() {
@@ -10,7 +11,8 @@ export default function App() {
       <BrowserRouter>
           <HeaderPage />
             <Switch>
-              <Route path="/" exact component={HomePage}/>
+              <Route path="/" exact component={Warehouses}/>
+              <Route path="/inventory" component={Inventory} />
             </Switch>
         </BrowserRouter>
     </div>
