@@ -1,11 +1,19 @@
+import './reset.css';
 import './App.scss';
+import HeaderPage from './components/HeaderPage/HeaderPage.jsx';
+import HomePage from './pages/HomePage/HomePage.jsx';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <p>Hello World</p>
+      <BrowserRouter>
+          <HeaderPage />
+            <Switch>
+              <Route path="/" exact component={HomePage}/>
+            </Switch>
+        </BrowserRouter>
     </div>
   );
 }
 
-export default App;
