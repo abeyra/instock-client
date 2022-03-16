@@ -1,0 +1,11 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
+
+.card-bg {
+    background-color: $nav-bg-color;
+    height: 3.75rem;
+
+    @include tablet {
+        height: 5.8125rem;
+    }
+}

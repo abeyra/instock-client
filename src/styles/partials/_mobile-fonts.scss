@@ -1,0 +1,37 @@
+@use './fonts' as *;
+@use './pad-marg' as *;
+@use './colors' as *;
+
+
+$mobile-pg-header: 1.75rem;
+$mobile-sub-header: 1.25rem;
+$mobile-labels: 0.813rem;
+$mobile-buttons: 0.813rem;
+$mobile-links: 0.813rem;
+$mobile-tbl-header: 0.688rem;
+$mobile-body-lrg: 0.938rem;
+$mobile-body-med: 0.813rem;
+$mobile-body-sm: 0.688rem;
+
+
+@mixin mobile-pg-header {
+    font-family: 'TitilliumWeb';
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: $primary-txt-color;
+    line-height: 2.25rem;
+}
+
+@mixin mobile-body-med {
+    font-family: 'TitilliumWeb';
+    font-size: $mobile-body-med;
+    color: $placeholder-color;
+    line-height: 1.25rem;
+}
+
+@mixin mobile-links-buttons-txt {
+    font-family: 'TitilliumWeb';
+    font-weight: 600;
+    font-size: $mobile-links;
+    line-height: 1.375rem;
+}
