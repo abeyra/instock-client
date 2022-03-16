@@ -1,1 +1,28 @@
+@use './styles/partials/colors' as *;
+@use './styles/partials/mixins' as *;
 
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    background-color: $bg-color;
+    font-family: 'TitilliumWeb';
+}
+
+// .inventory-list {
+//     background-color: $nav-bg-color;
+//     height: 3.75rem;
+
+//     @include tablet {
+//         height: 5.8125rem;
+//         // padding: 1rem;
+//     }
+// }

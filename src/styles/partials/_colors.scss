@@ -1,16 +1,45 @@
 //primary colors 
-$global-text-color: #13182C;
+$primary-txt-color: #13182C;
 $interactive-elements: #2E66E5;
-$global-white: #FFFFFF;
+$global-white: #FFFFFF; 
 
 //secondary colors 
 $placeholder-color: #5C667E;
-$outlines-dividers-borders: #BDC5D5;
+
+$outline: #BDC5D5;
+$divider: #BDC5D5;
+$border: #BDC5D5;
 
 //background colors 
-$top-navigation-header-bg: #232940;
-$page-bg-table-column-header-bg-cta-bg: #F7F8F9;
+$nav-bg-color: #232940;
+$bg-color: #F7F8F9;
+$table-header-bg: #F7F8F9;
+
+//NAV Active Button
+$nav-active-btn-bg: #13182C; 
+$nav-active-btn-txt: #ffffff;
+
+//NAV Inactive Link
+$nav-inactive-link-color: #BDC5D5;
+$nav-active-link-txt: #ffffff;
+
+//CTA - Primary 
+$cta-pri-dflt: #2E66E5;
+$cta-pri-hover: #232940;
+$cta-pri-txt: #ffffff;
+
+//CTA - Secondary Default
+$cta-sec-dflt-bg: #F7F8F9;
+$cta-sec-dflt-border: #BDC5D5;
+$cta-sec-txt: #5C667E;
+$cta-sec-hover-text: #2E66E5;
+$cta-sec-hover-bg: #2E66E5;
+
+//FORMS Outline
+$form-outline-dflt: #BDC5D5;
+$form-outline-select: #2E66E5;
+
 
 //supporting colors
-$in-stock-color: #158463;
-$out-of-stock-color: #C94515;
+$in-stock: #158463;
+$out-of-stock: #C94515;

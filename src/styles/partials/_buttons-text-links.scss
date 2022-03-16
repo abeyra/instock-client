@@ -1,0 +1,74 @@
+@use './fonts' as *;
+@use './colors' as *;
+@use './mobile-fonts' as *;
+@use './pad-marg' as *;
+@use './deskntab-fonts' as *;
+
+
+$mobile-btn-height: 2.25rem;
+$deskntab-btn-height: 2.375rem;
+$btn-padding: 1rem;
+$radius: 1.25rem;
+
+
+@mixin mobile-searchbar {
+    @include mobile-body-med;
+    height: $mobile-btn-height;
+    padding: 0 $btn-padding;
+    border-radius: $radius;
+    border: 1px solid $outline;    
+}
+
+@mixin deskntab-searchbar {
+    @include deskntab-body-med;
+    height: $deskntab-btn-height;
+    padding: 0 $btn-padding;
+    border-radius: $radius;
+    border: 1px solid $outline; 
+    width: 11.563rem;   
+}
+
+@mixin mobile-primary-cta-dflt {
+    @include mobile-links-buttons-txt;
+    height: $mobile-btn-height;
+    padding: 0 $btn-padding;
+    border-radius: $radius;
+    color: $cta-pri-txt;
+    background-color: $cta-pri-dflt;
+    border: none;
+    width: 100%;
+}
+
+@mixin mobile-cta-hover {
+    border: 1px solid $cta-pri-hover;
+    border-radius: $radius;
+    height: $mobile-btn-height;  
+}
+
+@mixin deskntab-cta-dflt {
+    height: $deskntab-btn-height;
+    padding: 0 $btn-padding;
+    border-radius: $radius;
+}
+
+@mixin mobile-nav-btn {
+    @include mobile-links-buttons-txt;
+    height: $mobile-btn-height;
+    padding: 0 $btn-padding;
+    border-radius: $radius;
+    background-color: $nav-active-btn-bg;
+    color: $nav-active-btn-txt;
+    align-items: center;
+    border: none;
+}
+
+@mixin mobile-nav-btn-inactive {
+    @include mobile-links-buttons-txt;
+    height: $mobile-btn-height;
+    padding: 0 $btn-padding;
+    border-radius: $radius;
+    background-color: $nav-bg-color;
+    color: $nav-inactive-link-color;
+    align-items: center;
+    border: none;
+}

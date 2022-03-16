@@ -13,87 +13,87 @@
     }
 }
 
-@mixin flex-column {
-    display: flex;
-    flex-direction: column;
-    @content;
-}
+// @mixin flex-column {
+//     display: flex;
+//     flex-direction: column;
+//     @content;
+// }
 
-@mixin flex-row {
-    display: flex;
-    flex-direction: row;
-    @content;
-}
+// @mixin flex-row {
+//     display: flex;
+//     flex-direction: row;
+//     @content;
+// }
 
-@mixin container-sidespace {
-    margin:;
+// @mixin container-sidespace {
+//     margin:"";
 
-    @include tablet {
-        margin:;
-    }
+//     @include tablet {
+//         margin:"";
+//     }
 
-    @include desktop {
-        margin:;
-    }
-}
+//     @include desktop {
+//         margin:"";
+//     }
+// }
 
-@mixin button {
-    font-size: ;
-    font-weight: ;
-    line-height: ;
-    text-align: center;
-    height: ;
-    width: ;
-    border-radius: ;
-    border-style: none;
-    background-color: ;
-    color: ;
+// @mixin button {
+//     font-size: ;
+//     font-weight: ;
+//     line-height: ;
+//     text-align: center;
+//     height: ;
+//     width: ;
+//     border-radius: ;
+//     border-style: none;
+//     background-color: ;
+//     color: ;
 
-    &:hover {
-        background-color: ;
+//     &:hover {
+//         background-color: ;
         
-    }
-    @include tablet {
-        font-size: ;
-        line-height: ;
-        width: ;
-    }
-} 
+//     }
+//     @include tablet {
+//         font-size: ;
+//         line-height: ;
+//         width: ;
+//     }
+// } 
 
-@mixin avatar {
-    background-color: ;
+// @mixin avatar {
+//     background-color: ;
 
-    border-radius: ;
-    min-width: ;
-    width: ;
-    height: ;
-}
+//     border-radius: ;
+//     min-width: ;
+//     width: ;
+//     height: ;
+// }
 
-@mixin forminput {
-    width: ;
-    height: ;
-    border: ;
-    border-radius: ;
-    padding: ;
-    background-color: ;
-    font-size: ;
-    font-weight: ;
-    line-height: ;
+// @mixin forminput {
+//     width: ;
+//     height: ;
+//     border: ;
+//     border-radius: ;
+//     padding: ;
+//     background-color: ;
+//     font-size: ;
+//     font-weight: ;
+//     line-height: ;
 
-    &::placeholder {
-        color:;
-    }
+//     &::placeholder {
+//         color:;
+//     }
 
-    &:focus {
-        outline:none;
-        border-color: ;
-    }
+//     &:focus {
+//         outline:none;
+//         border-color: ;
+//     }
     
-    @include tablet {
-        width: ;
-        height: ;
-        padding: ;
-        font-size: ;
-        line-height:;
-    }
-}
+//     @include tablet {
+//         width: ;
+//         height: ;
+//         padding: ;
+//         font-size: ;
+//         line-height:;
+//     }
+// }

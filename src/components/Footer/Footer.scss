@@ -1,0 +1,29 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/buttons-text-links' as *;
+@use '../../styles/partials/pad-marg' as *;
+@use '../../styles/partials/mobile-fonts' as *;
+
+
+.footer {
+    margin: 0 auto;
+    text-align: center;
+    margin: 2.5rem 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    @include tablet {
+        margin: 4.375rem 0 2.5rem 0; 
+    }
+
+    @include desktop {
+        margin: 10.125rem 0 3rem 0;
+    }
+    
+    &__text {
+       font-size: $mobile-body-sm;
+    }
+}
