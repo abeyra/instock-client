@@ -4,15 +4,89 @@
     justify-content: space-around;
     align-items: center;
     border-bottom: 1px solid grey;
+    padding: 1rem;
     &--title {
         align-items: center;
+        text-align: center; 
+    }
+    &--edit-wrap {
+        border-radius: 50%;
+        padding: 0.3rem;
+        height: 36px;
+        width: 36px;
+        background-color: #2E66E6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            fill: white;
+        }      
     }
 }
 
 .warehouse__container {
         border-bottom: 1px solid grey;
+        display: flex;
         flex-direction: column;
-        margin: 2rem;
+        padding: 2rem;
+        &--address {
+            margin-bottom: 2rem;
+            line-height: 1.5rem;
+        }
+        &--contact {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            line-height: 1.5rem;
+        }
+}
+
+.inventory__container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-bottom: 1px solid grey;
+    &--top {
         width: 100%;
-        justify-content: space-around;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        line-height: 1.5rem;
+    }
+    &--item {
+        display: flex;
+        flex-direction: column;
+        &--name {
+            color: #2E66E6;
+        }
+    }
+    &--status {
+        display: flex;
+        flex-direction: column;
+        // margin-right: 7.5rem;
+        width: 12rem;
+    }
+    &--bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        line-height: 1.5rem;
+    }
+    &--category {
+        display: flex;
+        flex-direction: column;
+    }
+    &--qty {
+        width: 12rem;
+        display: flex;
+        flex-direction: column;
+        // margin-right: 7.5rem
+    }
+    &--icons {
+        display: flex;
+        justify-content: space-between;
+        
+    }
 }
