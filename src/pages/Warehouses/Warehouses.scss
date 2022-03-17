@@ -5,13 +5,3 @@
 @use '../../styles/partials/pad-marg' as *;
 @use '../../styles/partials/mobile-fonts' as *;
 
-.inventory-list {
-    
-    background-color: $nav-bg-color;
-    // height: 6.25rem;
-
-    @include tablet {
-        height: 5.8125rem;
-        // padding: 1rem;
-    }
-}

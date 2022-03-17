@@ -4,6 +4,7 @@ import Button from '../Button';
 import CardHeader from '../CardHeader';
 
 
+
 export default function Card() {
     return (
         <>
@@ -16,6 +17,7 @@ export default function Card() {
                         <Button 
                         text="+ Add New Item" />
                     </div>
+                   
             </div>
         </article>
         </>
