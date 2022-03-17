@@ -1,0 +1,81 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/buttons-text-links' as *;
+@use '../../styles/partials/pad-marg' as *;
+@use '../../styles/partials/mobile-fonts' as *;
+
+
+.navbar { 
+    box-sizing: border-box;
+    padding: 1rem;
+    background-color: $nav-bg-color;
+
+    @include tablet {
+        padding: 2rem;
+    }
+
+    @include desktop {
+        padding: 2.188rem 0;
+    }
+    
+        &__logo {
+            margin: 0 auto;
+            padding: 0 0 1rem 0;
+            display: flex;
+
+            @include tablet {
+               margin: 0;
+               flex: none;
+               padding: 0;
+            }
+
+            @include desktop {
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        &__nav {
+            @include tablet {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            @include desktop {
+                margin: 0 8.125rem;
+                padding: 0;
+            }
+
+                &--links {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                }
+        }
+
+        &__navlink {
+            @include mobile-nav-btn-inactive;
+            cursor: pointer; 
+            display: flex;
+            width: 100%;
+            justify-content: center;
+
+                &--active {
+                    @include mobile-nav-btn;
+                    color: $nav-active-btn-txt;   
+                }
+
+        }
+        
+        &__link-item {
+            @include tablet {
+                margin: 0 0 0 1.5rem;
+            }
+        }
+}
+
+.navbar__navlink:hover {
+    text-decoration: underline; 
+}

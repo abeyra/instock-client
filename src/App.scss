@@ -1,1 +1,18 @@
+@use './styles/partials/colors' as *;
+@use './styles/partials/mixins' as *;
 
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    background-color: $bg-color;
+    font-family: 'TitilliumWeb';
+}
