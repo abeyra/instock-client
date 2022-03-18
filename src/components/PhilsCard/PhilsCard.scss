@@ -9,3 +9,40 @@
         height: 5.8125rem;
     }
 }
+.header{
+    margin: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0rem;
+    
+    
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #BDC5D5;//change to variable color
+        padding-bottom: 1.5rem; 
+    }
+    &__title{
+        padding: 1rem 0;
+    }
+    &__data{
+        margin-bottom: 1.5rem;
+    }
+    &__edit{
+        float: right;
+    }
+    &__size{
+        width: 25%;
+    }
+    
+    &__actions{
+        &--mobile{
+            display: none;
+            @include tablet{
+                display: inline;
+            }
+        }
+    }
+
+}

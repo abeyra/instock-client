@@ -2,6 +2,7 @@ import './Card.scss';
 import Search from '../Search';
 import Button from '../Button';
 import CardHeader from '../CardHeader';
+import PhilsCard from '../PhilsCard/PhilsCard';
 
 
 
@@ -17,7 +18,7 @@ export default function Card() {
                         <Button 
                         text="+ Add New Item" />
                     </div>
-                   
+                
             </div>
         </article>
         </>

@@ -5,6 +5,8 @@ import Inventory from './pages/Inventory';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import Card from './components/Card';
+import PhilsCard from './components/PhilsCard/PhilsCard';
 
 
 export default function App() {
@@ -12,11 +14,12 @@ export default function App() {
     <div className="App">
       <BrowserRouter>
           <NavBar />
-            <Switch>
+            <PhilsCard />
+            {/* <Switch>
               <Route path="/warehouses" exact component={Warehouses} />
               <Route path="/inventory" component={Inventory} />
-            </Switch>
-          <Footer />
+            </Switch> */}
+          {/* <Footer /> */}
          </BrowserRouter>
     </div>
   );

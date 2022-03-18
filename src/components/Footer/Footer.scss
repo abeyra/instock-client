@@ -9,12 +9,6 @@
 .footer {
     margin: 0 auto;
     text-align: center;
-    // margin: 2.5rem 0;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-
     @include tablet {
         margin: 4.375rem 0 2.5rem 0; 
     }
