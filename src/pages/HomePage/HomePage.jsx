@@ -1,11 +1,11 @@
-// // import './InventoryList.scss';
-// // import { Component } from 'react';
-// // import { listAPI } from '../../util/listAPI';
-// // import axios from 'axios';
-// // import Card from '../Card/Card';
+// import './HomePage.scss';
+// import { Component } from 'react';
+// import { listAPI } from '../../util/listAPI';
+// import axios from 'axios';
+// import Main from '../Main';
 
 
-// export default class InventoryList extends Component {
+// export default class HomePage extends Component {
 //     state = {
 //         list: []
 //     }
@@ -26,10 +26,10 @@
 //             <>
             
 //                 <section className="inventory-list">
-            
-//                     <Card 
+//                 {/* <div className="page-container"> */}
+//                     <Main
 //                     list={this.state.list}/>
-                   
+//                      {/* </div> */}
 //                 </section>
            
 //             </>

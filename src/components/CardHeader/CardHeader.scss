@@ -4,7 +4,19 @@
 @use '../../styles/partials/buttons-text-links' as *;
 @use '../../styles/partials/pad-marg' as *;
 @use '../../styles/partials/mobile-fonts' as *;  
+@use '../../styles/partials/deskntab-fonts' as *;  
 
 .card-header {
-    padding: 0 1.5rem;
+    margin: 0 1.5rem;
+    @include mobile-pg-header;  
+
+    @include tablet {
+        padding: 0 2rem;
+        margin: 0;
+        @include deskntab-pg-header;
+    }
+
+    @include desktop {
+        padding: 0 2.5rem;
+    }
 }

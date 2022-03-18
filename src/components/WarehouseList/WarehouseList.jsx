@@ -3,8 +3,8 @@ import './WarehouseList.scss';
 import Search from '../Search';
 import Button from '../Button';
 import CardHeader from '../CardHeader';
-import trash from '../../assets/Icons/delete_outline-24px.svg';
-import edit from '../../assets/Icons/edit-24px.svg'
+import trash from '../../assets/icons/delete_outline-24px.svg';
+import edit from '../../assets/icons/edit-24px.svg'
 import { Component } from 'react/cjs/react.production.min';
 import axios from 'axios';
 import Modal from '../Modal/Modal'
@@ -38,10 +38,10 @@ class WarehouseList extends Component {
         }
         return (
                 
-            <div className="card-bg">
+            <div>
                 
-                <article className="card">
-                    <div className="card__tablet">
+                {/* <article className="card"> */}
+                    {/* <div className="card__tablet">
                         <CardHeader 
                         text="Warehouse"
                         />
@@ -52,7 +52,8 @@ class WarehouseList extends Component {
                                 text="+ Add New Warehouse"
                                 />
                             </div>
-                    </div> 
+                    </div>  */}
+                    
                     <Modal onClose={() => this.setState({showModal: false})} show={this.state.showModal} id={this.state.id} name={this.state.name}/>
                     <div className='header'>
                        {this.state.warehouse.map((item, index) => {
@@ -78,7 +79,7 @@ class WarehouseList extends Component {
                        
                        
                     </div>
-                </article>
+                {/* </article> */}
                 
             </div>
             

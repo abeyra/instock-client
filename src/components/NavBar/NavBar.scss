@@ -10,9 +10,11 @@
     box-sizing: border-box;
     padding: 1rem;
     background-color: $nav-bg-color;
+    height: 12.5rem;
 
     @include tablet {
         padding: 2rem;
+        height: 11.625rem;
     }
 
     @include desktop {
@@ -37,6 +39,7 @@
         }
 
         &__nav {
+           
             @include tablet {
                 display: flex;
                 align-items: center;
@@ -61,6 +64,7 @@
             display: flex;
             width: 100%;
             justify-content: center;
+            
 
                 &--active {
                     @include mobile-nav-btn;
@@ -70,6 +74,7 @@
         }
         
         &__link-item {
+            
             @include tablet {
                 margin: 0 0 0 1.5rem;
             }

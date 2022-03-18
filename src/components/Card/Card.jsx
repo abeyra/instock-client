@@ -2,25 +2,26 @@ import './Card.scss';
 import Search from '../Search';
 import Button from '../Button';
 import CardHeader from '../CardHeader';
-import PhilsCard from '../WarehouseList/WarehouseList';
-
-
+import {Switch, Route} from 'react-router-dom';
+import Warehouses from '../../pages/Warehouses';
+import Inventory from '../../pages/Inventory';
 
 export default function Card() {
     return (
         <>
-        <article className="card">
-            <div className="card__tablet">
-                <CardHeader 
-                text="Inventory" />
-                    <div className="card__cta">
-                        <Search placeholder="Search..." />
-                        <Button 
-                        text="+ Add New Item" />
-                    </div>
-                
-            </div>
-        </article>
+            <article className="card">
+                <Switch>
+                    <Route path="/" exact component={Warehouses} />
+                    <Route path="/warehouses" component={Warehouses} />
+                    <Route path="/inventory" component={Inventory} />
+                    {/* <Route path="/" component={} />
+                    <Route path="/" component={} />
+                    <Route path="/" component={} />
+                    <Route path="/" component={} />
+                    <Route path="/" component={} />
+                    <Route path="/" component={} /> */}
+                </Switch>
+            </article>
         </>
     )
 }
