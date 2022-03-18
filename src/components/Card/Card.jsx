@@ -2,7 +2,7 @@ import './Card.scss';
 import Search from '../Search';
 import Button from '../Button';
 import CardHeader from '../CardHeader';
-import PhilsCard from '../PhilsCard/PhilsCard';
+import PhilsCard from '../WarehouseList/WarehouseList';
 
 
 

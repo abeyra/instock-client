@@ -1,24 +1,27 @@
 import { Link } from 'react-router-dom'
-import './PhilsCard.scss'; 
+import './WarehouseList.scss'; 
 import Search from '../Search';
 import Button from '../Button';
 import CardHeader from '../CardHeader';
-import Modal from '../Model/Modal';
 import trash from '../../assets/Icons/delete_outline-24px.svg';
 import edit from '../../assets/Icons/edit-24px.svg'
 import { Component } from 'react/cjs/react.production.min';
 import axios from 'axios';
+import Modal from '../Modal/Modal'
+import React, { useState } from 'react'
 
 const URL = 'http://localhost:9000/warehouses/'
 
-class PhilsCard extends Component {
+
+class WarehouseList extends Component {
     
     state = (
         {
             warehouse: [],
-            showModel: false
+            showModal: false
         }
     )
+    
 
     componentDidMount(){
         axios.get(URL)
@@ -28,16 +31,15 @@ class PhilsCard extends Component {
             })
     }
     
-
-
     render(){
         
         if (this.state.warehouse === []){
             return <h1>Loading....</h1>
         }
         return (
-                  
+                
             <div className="card-bg">
+                
                 <article className="card">
                     <div className="card__tablet">
                         <CardHeader 
@@ -51,7 +53,7 @@ class PhilsCard extends Component {
                                 />
                             </div>
                     </div> 
-                   
+                    <Modal onClose={() => this.setState({showModal: false})} show={this.state.showModal} />
                     <div className='header'>
                        {this.state.warehouse.map((item, i) => {
                            return(
@@ -61,27 +63,28 @@ class PhilsCard extends Component {
                                     <p className='header__data'>{item.name}</p>
                                     <h3 className='header__title'>ADDRESS</h3>
                                     <p className='header__data'>{item.address}, {item.city}, {item.country}</p>
-                                    <img src={trash} onClick={2} />
+                                    <img src={trash} alt='trash can icon' onClick={() => this.setState({showModal: true})} />
                                 </div>
                                 <div className='header__size'>
                                     <h3 className='header__title'>CONTACT NAME</h3>
                                     <p className='header__data'>{item.contact.name}</p>
                                     <h3 className='header__title'>CONTACT INFORMATION</h3>
                                     <p className='header__data'>{item.contact.phone} {item.contact.email}</p>
-                                    <img className='header__edit' src={edit}  />
-                                </div>
+                                    <img className='header__edit' alt='edit pencil icon' src={edit}  />
+                                </div>    
                             </div>  
-                           )
-                           
+                           )  
                        })} 
                        
-                        
+                       
                     </div>
                 </article>
                 
             </div>
             
+           
+           
         )
     }  
 }
-export default PhilsCard
+export default WarehouseList

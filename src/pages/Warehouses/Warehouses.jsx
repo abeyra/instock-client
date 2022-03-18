@@ -1,10 +1,11 @@
 import './Warehouses.scss';
-import PhilsCard from '../../components/PhilsCard/PhilsCard';
+import WarehouseList from '../../components/WarehouseList/WarehouseList';
 
 export default function Warehouses() {
     return (
         <>
-        <PhilsCard />
+            
+            <WarehouseList />
         </>
     )
 }

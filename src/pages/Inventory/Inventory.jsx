@@ -5,7 +5,7 @@ import './Inventory.scss';
 export default function Inventory() {
     return (
         <>
-        <InventoryList />
+            <InventoryList />
         </>
     )
 }
