@@ -7,6 +7,10 @@ import { withRouter } from 'react-router-dom';
 import Edit from '../../assets/Icons/edit-24px.svg'
 import Delete from '../../assets/Icons/delete_outline-24px.svg'
 import ArrowRight from '../../assets/Icons/chevron_right-24px.svg'
+import Card from '../../components/Card/Card';
+import Details from '../../components/Details';
+import CardHeader from '../../components/CardHeader';
+import Button from '../../components/Button';
 // import HeaderPage from '../../components/HeaderPage.jsx'
 
 class WarehouseDetailsPage extends Component {
@@ -37,10 +41,11 @@ class WarehouseDetailsPage extends Component {
     // }
 
     componentDidMount() {
-      document.title = 'WarehouseDetails'
+      document.title = 'Warehouse Details'
       const warehouseId = this.props.match.params.id
       axios
       .get(`http://localhost:9000/warehouses/${warehouseId}`)
+      // .get(`http://localhost:9000/warehouses/details/${warehouseId}`)
         .then(response => {   
           this.setState({
               chosenWarehouse: response.data
@@ -54,14 +59,48 @@ class WarehouseDetailsPage extends Component {
     render () {
     return (
         <>
+        
+        {/* <Details/> */}
+         <article className="card">
+            <div className="card__tablet">
+              <div className='warehouse__info'>
+                <div className='warehouse__info--title'>
+                    <img src={ArrowBack}/>
+                    <CardHeader text={this.state.chosenWarehouse.name} />
+                </div>
+                  <span className='warehouse__info--edit-wrap'><img src={Edit}/></span>
+                  <span className='warehouse__info--edit-wrap--big'><img src={Edit}/> Edit</span>
+              </div>
+            </div>
+            <section className='warehouse__container'>
+                <div className='warehouse__container--address'>
+                  <h4 className="warehouse__container--header">WAREHOUSE ADDRESS:</h4>
+                    <span>{this.state.chosenWarehouse.address + ', '}</span>
+                    <span>{this.state.chosenWarehouse.name + ', '}</span>
+                    <span>{this.state.chosenWarehouse.country}</span>
+                </div>
+              <section className='warehouse__container--contact'>
+                <div>
+                    <h4 className="warehouse__container--header">CONTACT NAME:</h4>
+                    <p>{this.state.chosenWarehouse.contact?.name}</p>
+                    <p>{this.state.chosenWarehouse.contact?.position}</p>
+                </div>
+                <div>
+                    <h4 className="warehouse__container--header">CONTACT INFORMATION:</h4>
+                    <p>{this.state.chosenWarehouse.contact?.phone}</p>
+                    <p>{this.state.chosenWarehouse.contact?.email}</p>
+                </div>
+              </section>
+            </section> 
+          </article>
         {/* <HeaderPage/> */}
-        <header>
-          <div className='warehouse__info'>
+        {/* <header> */}
+          {/* <div className='warehouse__info'>
               <h1 className='warehouse__info--title'><img src={ArrowBack}/>{this.state.chosenWarehouse.name}</h1>
               
               <span className='warehouse__info--edit-wrap'><img src={Edit}/></span>
-          </div>
-        <section className='warehouse__container'>
+          </div> */}
+        {/* <section className='warehouse__container'>
             <div className='warehouse__container--address'>
                 <p>WAREHOUSE ADDRESS:</p>
                 <span>{this.state.chosenWarehouse.address + ', '}</span>
@@ -80,9 +119,9 @@ class WarehouseDetailsPage extends Component {
                   <p>{this.state.chosenWarehouse.contact?.email}</p>
               </div>
           </section>
-        </section>
+        </section>  */}
 
-        <section className='inventory__container'>
+        {/* <section className='inventory__container'>
             <div className='inventory__container--top'>
               <div className='inventory__container--item'>
                 <p>INVENTORY ITEM</p>
@@ -108,9 +147,9 @@ class WarehouseDetailsPage extends Component {
                 <img src={Delete} />
                 <img src={Edit} />
           </div>
-        </section>
+        </section> */}
 
-        </header> 
+        {/* </header>  */}
         
       
       </>
