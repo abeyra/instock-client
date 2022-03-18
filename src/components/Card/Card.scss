@@ -24,6 +24,7 @@
     }
 
     &__tablet {
+        margin-bottom: 2rem;//phil's add
         @include tablet {
             display: flex;
             justify-content: space-between;
