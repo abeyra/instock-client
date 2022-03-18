@@ -8,8 +8,8 @@ function Modal(props) {
         }
 
         return(
-            <div className="modal">
-                <div className="modal__content">
+            <div className="modal" onClick={props.onClose}>
+                <div className="modal__content" onClick={e => e.stopPropagation()}>
                     <button className="modal__button" onClick={props.onClose}>Close</button>
                 </div>
             </div>

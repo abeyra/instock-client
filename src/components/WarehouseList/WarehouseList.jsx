@@ -8,7 +8,6 @@ import edit from '../../assets/Icons/edit-24px.svg'
 import { Component } from 'react/cjs/react.production.min';
 import axios from 'axios';
 import Modal from '../Modal/Modal'
-import React, { useState } from 'react'
 
 const URL = 'http://localhost:9000/warehouses/'
 
