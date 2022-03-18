@@ -2,8 +2,6 @@ import './ItemList.scss';
 import Item from '../Item';
 import Sort from '../../assets/icons/sort-24px.svg';
 
-
-
 export default function ItemList({ list }) {
     return (
         <>
