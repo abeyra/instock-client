@@ -8,12 +8,12 @@ import Edit from '../../assets/Icons/edit-24px.svg'
 import Delete from '../../assets/Icons/delete_outline-24px.svg'
 import ArrowRight from '../../assets/Icons/chevron_right-24px.svg'
 import Card from '../../components/Card/Card';
-import Details from '../../components/Details';
+
 import CardHeader from '../../components/CardHeader';
 import Button from '../../components/Button';
 // import HeaderPage from '../../components/HeaderPage.jsx'
 
-class WarehouseDetailsPage extends Component {
+export default class WarehouseDetailsPage extends Component {
     state = {
         chosenWarehouse: {},
         inventoryList: []
@@ -59,10 +59,7 @@ class WarehouseDetailsPage extends Component {
     render () {
     return (
         <>
-        
-        {/* <Details/> */}
-         <article className="card">
-            <div className="card__tablet">
+         <div className="card__tablet">
               <div className='warehouse__info'>
                 <div className='warehouse__info--title'>
                     <img src={ArrowBack}/>
@@ -92,7 +89,6 @@ class WarehouseDetailsPage extends Component {
                 </div>
               </section>
             </section> 
-          </article>
         {/* <HeaderPage/> */}
         {/* <header> */}
           {/* <div className='warehouse__info'>
@@ -157,4 +153,3 @@ class WarehouseDetailsPage extends Component {
 }
 }
 
-export default WarehouseDetailsPage;
