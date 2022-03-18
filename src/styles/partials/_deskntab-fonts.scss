@@ -22,23 +22,48 @@ $deskntab-line-p3: 1.125rem;
 
 
 @mixin deskntab-pg-header {
-    font-family: 'TitilliumWeb';
-    font-size: 1.75rem;
+    font-size: $deskntab-pg-header;
     font-weight: 600;
     color: $primary-txt-color;
     line-height: $deskntab-line-h1;
 }
 
 @mixin deskntab-body-med {
-    font-family: 'TitilliumWeb';
     font-size: $deskntab-body-med;
     color: $placeholder-color;
     line-height: $deskntab-line-p2;
 }
 
 @mixin deskntab-links-buttons-txt {
-    font-family: 'TitilliumWeb';
     font-weight: 600;
     font-size: $deskntab-links;
     line-height: $deskntab-line-h3;
+}
+
+@mixin deskntab-field-txt {
+    font-weight: 600;
+    font-size: $deskntab-tbl-header;
+    text-transform: uppercase;
+    line-height: $deskntab-line-h4;
+    color: $field-txt-color;
+}
+
+@mixin deskntab-record-link {
+    font-weight: 600;
+    font-size: $deskntab-links;
+    line-height: $deskntab-line-h3;
+    color: $record-txt-lnk;
+}
+
+@mixin deskntab-record-txt {
+    font-size: $deskntab-body-med;
+    line-height: $deskntab-line-p2;
+    color: $record-txt-color;
+}
+
+@mixin deskntab-record-in-stock {
+    font-size: $deskntab-body-sm;
+    font-weight: 600;
+    line-height: $deskntab-line-p3;
+    color: $in-stock;
 }

@@ -1,0 +1,43 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/buttons-text-links' as *;
+@use '../../styles/partials/pad-marg' as *;
+@use '../../styles/partials/mobile-fonts' as *;
+@use '../../styles/partials/deskntab-fonts' as *;
+
+
+.field {
+    display: none;
+
+    @include tablet {
+        display: flex;
+        background-color: $table-header-bg;
+        padding: 0.688rem 2rem;
+        justify-content: space-between;
+    }
+
+    @include desktop {
+        padding: 0.688rem 2.5rem;
+    }
+
+    &__section {
+        @include tablet {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__name {
+        @include tablet {
+            @include deskntab-field-txt;
+            padding: 0 0.559rem 0 0;
+        }
+    }
+
+    &__icon {
+        @include tablet {
+            height: .75rem;      
+        }
+    }
+}

@@ -5,6 +5,8 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    /// Adding the font-family here and removing from all mixins to stay DRY
+    font-family: 'TitilliumWeb'  
 }
 
 a {

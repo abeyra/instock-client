@@ -6,11 +6,22 @@ $global-white: #FFFFFF;
 
 $placeholder-color: #5C667E;
 
+
+//Table Colors -- TO BE REWRITTEN SEE BELOW 
 $field-txt-color: #5C667E;
 $record-txt-color: #13182C;
 $record-txt-lnk: #2E66E5;
+$table-header-bg: #F7F8F9; 
+/// !!!! ^^^^ CHANGE TO vvvv 
+$table-field-bg: #F7F8F9; 
+$table-field-text-color: #5C667E;
+$table-record-text-color: #13182C;
+$table-record-text-lnk: #2E66E5;
 
 
+//supporting colors
+$in-stock: #158463;
+$out-of-stock: #C94515;
 
 
 $outline: #BDC5D5;
@@ -20,33 +31,51 @@ $border: #BDC5D5;
 //background colors 
 $nav-bg-color: #232940;
 $bg-color: #F7F8F9;
-$table-header-bg: #F7F8F9;
 
-//NAV Active Button
+
+
+//NAV Active Button -- TO BE REWRITTEN SEE BELOW 
 $nav-active-btn-bg: #13182C; 
 $nav-active-btn-txt: #ffffff;
+/// !!!! ^^^^ CHANGE TO vvvv 
+$nav-active-button-bg: #13182C; 
+$nav-active-button-text: #ffffff;
 
-//NAV Inactive Link
+
+//NAV Inactive Link -- TO BE REWRITTEN SEE BELOW 
 $nav-inactive-link-color: #BDC5D5;
 $nav-active-link-txt: #ffffff;
+/// !!!! ^^^^ CHANGE TO vvvv 
+$nav-active-link-text: #ffffff;
 
-//CTA - Primary 
+
+//CTA - Primary -- TO BE REWRITTEN SEE BELOW 
 $cta-pri-dflt: #2E66E5;
 $cta-pri-hover: #232940;
 $cta-pri-txt: #ffffff;
+/// !!!! ^^^^ CHANGE TO vvvv 
+$button-primary-default: #2E66E5;
+$button-primary-hover: #232940;
+$button-primary-text: #ffffff;
 
-//CTA - Secondary Default
+
+//CTA - Secondary Default -- TO BE REWRITTEN SEE BELOW 
 $cta-sec-dflt-bg: #F7F8F9;
 $cta-sec-dflt-border: #BDC5D5;
 $cta-sec-txt: #5C667E;
 $cta-sec-hover-text: #2E66E5;
 $cta-sec-hover-bg: #2E66E5;
+/// !!!! ^^^^ CHANGE TO vvvv 
+$button-secondary-default-bg: #F7F8F9;
+$button-secondary-default-border: #BDC5D5;
+$button-secondary-text: #5C667E;
+$button-secondary-hover-text: #2E66E5;
+$button-secondary-hover-bg: #2E66E5; /// ???? DOUBLE CHECK
 
-//FORMS Outline
+
+//FORMS Outline -- TO BE REWRITTEN SEE BELOW 
 $form-outline-dflt: #BDC5D5;
 $form-outline-select: #2E66E5;
-
-
-//supporting colors
-$in-stock: #158463;
-$out-of-stock: #C94515;
+/// !!!! ^^^^ CHANGE TO vvvv
+$form-outline-default: #BDC5D5;
+$form-outline-focus: #2E66E5;
