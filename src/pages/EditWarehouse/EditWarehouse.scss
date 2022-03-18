@@ -1,0 +1,74 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/buttons-text-links' as *;
+@use '../../styles/partials/pad-marg' as *;
+@use '../../styles/partials/deskntab-fonts' as *;
+
+input {
+    @include mobile-searchbar;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 1rem 0;   
+}
+.form-wrap {
+    &__tablet {
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+    }
+    // border-top: 1px solid $border;
+    
+    }
+.form-wrap__details {
+    border-top: 1px solid $border;
+    padding: 1rem;
+    &--title {
+       font-weight: 600;
+       font-size: 1.25rem;
+       margin-bottom: 2rem;
+    }
+    &--label {
+        font-weight: 600;
+    }
+}
+.contact-wrap {
+    border-top: 1px solid $border;
+    padding: 1rem;
+    @include tablet {
+        border-left: 1px solid $border;
+    }
+    &__title {
+        font-weight: 600;
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+    }
+    &__label {
+        font-weight: 600;
+    }
+}
+.button-wrap {
+    background-color: rgba(247, 248, 249, 0.7);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+        justify-content: flex-end
+    }
+    &__cancel {
+    @include mobile-primary-cta-dflt;
+    width: 10rem;
+    background-color: white;
+    color: $field-txt-color;
+    border: 1px solid $border;
+    @include tablet {
+        margin-right: 2rem
+    }
+    }
+    &__save {
+    @include mobile-primary-cta-dflt;
+    width: 10rem;
+}
+}

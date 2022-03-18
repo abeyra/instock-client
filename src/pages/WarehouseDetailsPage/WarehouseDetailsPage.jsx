@@ -3,7 +3,7 @@ import React from 'react';
 import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
 import axios from 'axios';
 import { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter,Link } from 'react-router-dom';
 import Edit from '../../assets/Icons/edit-24px.svg'
 import Delete from '../../assets/Icons/delete_outline-24px.svg'
 import ArrowRight from '../../assets/Icons/chevron_right-24px.svg'
