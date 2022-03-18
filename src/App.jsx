@@ -16,7 +16,7 @@ export default function App() {
               <Route path="/warehouses" exact component={Warehouses} />
               <Route path="/inventory" component={Inventory} />
             </Switch>
-          <Footer />
+            <Footer />
          </BrowserRouter>
     </div>
   );
