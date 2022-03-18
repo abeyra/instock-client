@@ -17,7 +17,8 @@ class WarehouseList extends Component {
     state = (
         {
             warehouse: [],
-            showModal: false
+            showModal: false,
+            
         }
     )
     
@@ -52,17 +53,17 @@ class WarehouseList extends Component {
                                 />
                             </div>
                     </div> 
-                    <Modal onClose={() => this.setState({showModal: false})} show={this.state.showModal} />
+                    <Modal onClose={() => this.setState({showModal: false})} show={this.state.showModal} id={this.state.id} name={this.state.name}/>
                     <div className='header'>
-                       {this.state.warehouse.map((item, i) => {
+                       {this.state.warehouse.map((item, index) => {
                            return(
-                             <div className='header__container'>
+                             <div className='header__container' >
                                 <div className='header__size'>
                                     <h3 className='header__title'>WAREHOUSE</h3>
                                     <p className='header__data'>{item.name}</p>
                                     <h3 className='header__title'>ADDRESS</h3>
                                     <p className='header__data'>{item.address}, {item.city}, {item.country}</p>
-                                    <img src={trash} alt='trash can icon' onClick={() => this.setState({showModal: true})} />
+                                    <img src={trash} alt='trash can icon' onClick={() => this.setState({showModal: true, id: item.id, name: item.name})} />
                                 </div>
                                 <div className='header__size'>
                                     <h3 className='header__title'>CONTACT NAME</h3>
