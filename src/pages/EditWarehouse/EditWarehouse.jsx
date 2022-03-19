@@ -1,59 +1,50 @@
 import { Component } from 'react/cjs/react.development';
+import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './EditWarehouse.scss';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
 import CardHeader from '../../components/CardHeader';
-import Search  from '../../components/Search/Search';
 import Button from '../../components/Button/Button';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 export default class Inventory extends Component {
-    state =  {
-       warehouse: { contact: {} }
-    }
-    
-
-    // componentDidMount() {
-    //   document.title = 'Warehouse Details'
-    //   const warehouseId = this.props.match.params.id
-    //   axios
-    //   .get(`http://localhost:9000/warehouses/${warehouseId}`)
-    //   // .get(`http://localhost:9000/warehouses/details/${warehouseId}`)
-    //     .then(response => {   
-    //       this.setState({
-    //           chosenWarehouse: response.data
-    //           })
-    //         })
-    //         .catch(err => console.log(err))
-    //   }
-
+    // state =  {
+    //    warehouse: { contact: {} }
+    // }
+ 
 
     render() {
+         if (this.state.warehouse !== {}) {
     return (
         <>
             <div >
                 {/* className="card__tablet" */}
                 <div className='warehouse__info'>
                     <div className='warehouse__info--title'>
+                        <Link to ={`/details/${this.state.warehouse.id}`}>
                         <img src={ArrowBack}/>
+                        </Link>
                         <CardHeader text={'Hello'} />
                         {/* text={this.state.warehouse.name} */}
                     </div>
                 </div>
               </div>
-              <form className='form-wrap'>
+              <form className='form-wrap' onSubmit={(e) => this.handleSubmit(e)}>
                 <div className='form-wrap__tablet'>
                     <section className='form-wrap__details'>
                         <h2 className='form-wrap__details--title'>Warehouse Details</h2>
                         <div className='form-wrap__details--wrap'>
                             <label className='form-wrap__details--label'>Warehouse Name</label>
-                            <input/>
+                            <input onChange={this.onSaveEdits} />
                             <label className='form-wrap__details--label'>Street Address</label>
-                            <input/>
+                            <input onChange={this.onSaveEdits} />
                             <label className='form-wrap__details--label'>City</label>
-                            <input/>
+                            <input onChange={this.onSaveEdits} />
                             <label className='form-wrap__details--label'>Country</label>
-                            <input/>
+                            <input onChange={this.onSaveEdits} />
                         </div>
                 
                     </section>
@@ -61,13 +52,13 @@ export default class Inventory extends Component {
                         <h2 className='contact-wrap__title'>Contact Details</h2>
                         <div className='contact-wrap__wrap'>
                             <label className='contact-wrap__label'>Contact Name</label>
-                            <input/>
+                            <input onChange={this.onSaveEdits} />
                             <label className='contact-wrap__label'>Position</label>
-                            <input/>
+                            <input onChange={this.onSaveEdits} />
                             <label className='contact-wrap__label'>Phone Number</label>
-                            <input/>
+                            <input onChange={this.onSaveEdits} />
                             <label className='contact-wrap__label'>Email</label>
-                            <input/>
+                            <input onChange={this.onSaveEdits} />
                         </div>
                     
                     </section>
@@ -82,4 +73,5 @@ export default class Inventory extends Component {
  
  )
     }
+}
 }
