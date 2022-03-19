@@ -1,3 +1,4 @@
+import React from 'react'
 import './reset.css';
 import './App.scss';
 import Card from './components/Card';
@@ -10,10 +11,10 @@ export default function App() {
   return (
     <div className="App">
       <BrowserRouter>
-          <NavBar />
-          <Card />
-          <Footer />
-         </BrowserRouter>
+        <NavBar />
+        <Card />
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

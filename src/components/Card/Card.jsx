@@ -1,4 +1,7 @@
 import './Card.scss'; 
+import Search from '../Search';
+import Button from '../Button';
+import CardHeader from '../CardHeader';
 import {Switch, Route} from 'react-router-dom';
 import Warehouses from '../../pages/Warehouses';
 import Inventory from '../../pages/Inventory';
