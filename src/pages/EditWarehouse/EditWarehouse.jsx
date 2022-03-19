@@ -125,26 +125,26 @@ export default class Inventory extends Component {
                         <h2 className='form-wrap__details--title'>Warehouse Details</h2>
                         <div className='form-wrap__details--wrap'>
                             <label className='form-wrap__details--label' htmlFor='name'>Warehouse Name</label>
-                            <input onChange={this.onSave} name="name" defaultValue={this.state.warehouse.name}/>
+                            <input className='input-field' onChange={this.onSave} name="name" defaultValue={this.state.warehouse.name}/>
                             <label className='form-wrap__details--label' htmlFor='address'>Street Address</label>
-                            <input onChange={this.onSave} name="address" defaultValue={this.state.warehouse.address}/>
+                            <input className='input-field' onChange={this.onSave} name="address" defaultValue={this.state.warehouse.address}/>
                             <label className='form-wrap__details--label' htmlFor='city'>City</label>
-                            <input onChange={this.onSave} name="city" defaultValue={this.state.warehouse.city}/>
+                            <input className='input-field' onChange={this.onSave} name="city" defaultValue={this.state.warehouse.city}/>
                             <label className='form-wrap__details--label' htmlFor='country'>Country</label>
-                            <input onChange={this.onSave} name="country" defaultValue={this.state.warehouse.country}/>
+                            <input className='input-field' onChange={this.onSave} name="country" defaultValue={this.state.warehouse.country}/>
                         </div>
                     </section>
                     <section className='contact-wrap'>
                         <h2 className='contact-wrap__title'>Contact Details</h2>
                         <div className='contact-wrap__wrap'>
                             <label className='contact-wrap__label' htmlFor='contact.name'>Contact Name</label>
-                            <input onChange={this.onSave} name="contact.name" defaultValue={this.state.warehouse.contact.name}/>
+                            <input className='input-field' onChange={this.onSave} name="contact.name" defaultValue={this.state.warehouse.contact.name}/>
                             <label className='contact-wrap__label' htmlFor='contact.position'>Position</label>
-                            <input onChange={this.onSave} name="contact.position" defaultValue={this.state.warehouse.contact.position}/>
+                            <input className='input-field' onChange={this.onSave} name="contact.position" defaultValue={this.state.warehouse.contact.position}/>
                             <label className='contact-wrap__label' htmlFor='contact.phone'>Phone Number</label>
-                            <input onChange={this.onSave} name="contact.phone" defaultValue={this.state.warehouse.contact.phone}/>
+                            <input className='input-field' onChange={this.onSave} name="contact.phone" defaultValue={this.state.warehouse.contact.phone}/>
                             <label className='contact-wrap__label' htmlFor='contact.email'>Email</label>
-                            <input onChange={this.onSave} name="contact.email" defaultValue={this.state.warehouse.contact.email}/>
+                            <input className='input-field' onChange={this.onSave} name="contact.email" defaultValue={this.state.warehouse.contact.email}/>
                         </div>
                     
                     </section>
