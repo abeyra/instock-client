@@ -5,7 +5,7 @@ import CardHeader from '../CardHeader';
 import {Switch, Route} from 'react-router-dom';
 import Warehouses from '../../pages/Warehouses';
 import Inventory from '../../pages/Inventory';
-import Inventory_details from '../../pages/Inventory_details';
+import InventoryDetails from '../../pages/InventoryDetails';
 
 export default function Card() {
     return (
@@ -17,7 +17,7 @@ export default function Card() {
                 <Route path="/inventory" component={Inventory} />
                 {/* <Route path="/" component={} />
                 <Route path="/" component={} /> */}
-                <Route path="/inventory/details" component={Inventory_details} />
+                <Route path="/inventory/details" component={InventoryDetails} />
                 {/* <Route path="/" component={} />
                 <Route path="/" component={} />
                 <Route path="/" component={} /> */}

@@ -1,8 +1,8 @@
 import { Component } from "react";
 import CardHeader from "../../components/CardHeader";
-import "./Inventory_details.scss";
+import "./InventoryDetails.scss";
 
-export default class Inventory_details extends Component {
+export default class InventoryDetails extends Component {
   render() {
     return (
       <>
@@ -13,9 +13,6 @@ export default class Inventory_details extends Component {
               
             </div>
           </div>
-        </div>
-        <div className="card__list">
-
         </div>
       </>
     );

@@ -15,7 +15,7 @@ export default function Item({ itemName, category, status, quantity, warehouseNa
                     </h4>
                         <div className="list__link">
                             <Link to={{
-                                path: "inventory/details",
+                                pathname: "inventory/details",
                                 state: {
                                     itemName: itemName,
                                     category: category,
