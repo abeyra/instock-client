@@ -7,6 +7,7 @@ import Warehouses from '../../pages/Warehouses';
 import Inventory from '../../pages/Inventory';
 import WarehouseDetailsPage from '../../pages/WarehouseDetailsPage'
 import EditWarehouse from '../../pages/EditWarehouse';
+import Inventory_details from '../../pages/Inventory_details';
 
 export default function Card() {
     return (
@@ -20,6 +21,10 @@ export default function Card() {
                 <Route path="/editwarehouse/:id" component={EditWarehouse} />
                 {/* <Route path="/" component={} />
                 <Route path="/" component={} />
+                {/* <Route path="/" component={} />
+                <Route path="/" component={} /> */}
+                <Route path="/inventory/details" component={Inventory_details} />
+                {/* <Route path="/" component={} />
                 <Route path="/" component={} />
                 <Route path="/" component={} /> */}
             </Switch>
