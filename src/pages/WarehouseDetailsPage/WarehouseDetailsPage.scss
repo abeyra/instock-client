@@ -99,52 +99,52 @@
         }
 }
 
-// .inventory__container {
-//     display: flex;
-//     flex-direction: column;
-//     padding: 2rem;
-//     border-bottom: 1px solid grey;
-//     &--top {
-//         width: 100%;
-//         display: flex;
-//         flex-direction: row;
-//         justify-content: space-between;
-//         margin-bottom: 2rem;
-//         line-height: 1.5rem;
-//     }
-//     &--item {
-//         display: flex;
-//         flex-direction: column;
-//         &--name {
-//             color: #2E66E6;
-//         }
-//     }
-//     &--status {
-//         display: flex;
-//         flex-direction: column;
-//         // margin-right: 7.5rem;
-//         width: 12rem;
-//     }
-//     &--bottom {
-//         display: flex;
-//         flex-direction: row;
-//         justify-content: space-between;
-//         margin-bottom: 2rem;
-//         line-height: 1.5rem;
-//     }
-//     &--category {
-//         display: flex;
-//         flex-direction: column;
-//     }
-//     &--qty {
-//         width: 12rem;
-//         display: flex;
-//         flex-direction: column;
-//         // margin-right: 7.5rem
-//     }
-//     &--icons {
-//         display: flex;
-//         justify-content: space-between;
+.inventory__container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-top: 1px solid grey;
+    &--top {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        line-height: 1.5rem;
+    }
+    &--item {
+        display: flex;
+        flex-direction: column;
+        &--name {
+            color: #2E66E6;
+        }
+    }
+    &--status {
+        display: flex;
+        flex-direction: column;
+        // margin-right: 7.5rem;
+        width: 12rem;
+    }
+    &--bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        line-height: 1.5rem;
+    }
+    &--category {
+        display: flex;
+        flex-direction: column;
+    }
+    &--qty {
+        width: 12rem;
+        display: flex;
+        flex-direction: column;
+        // margin-right: 7.5rem
+    }
+    &--icons {
+        display: flex;
+        justify-content: space-between;
         
-//     }
-// }
+    }
+}

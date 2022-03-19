@@ -8,10 +8,8 @@ import Edit from '../../assets/Icons/edit-24px.svg'
 import Delete from '../../assets/Icons/delete_outline-24px.svg'
 import ArrowRight from '../../assets/Icons/chevron_right-24px.svg'
 import Card from '../../components/Card/Card';
-
 import CardHeader from '../../components/CardHeader';
-import Button from '../../components/Button';
-// import HeaderPage from '../../components/HeaderPage.jsx'
+// import InventoryList from '../../components/InventoryList/InventoryList';
 
 export default class WarehouseDetailsPage extends Component {
     state = {
@@ -29,16 +27,16 @@ export default class WarehouseDetailsPage extends Component {
             .catch(err => console.log(err))
     }
 
-    // getInventoryById = (id) => {
-    //   axios
-    //   .get(`http://localhost:9000/inventories/${id}`)
-    //     .then(response => {   
-    //       this.setState({
-    //           inventoryList: response.data
-    //           })
-    //         })
-    //         .catch(err => console.log(err))
-    // }
+    getInventoryById = (id) => {
+      axios
+      .get(`http://localhost:9000/inventories/warehouses/${id}`)
+        .then(response => {   
+          this.setState({
+              inventoryList: response.data
+              })
+            })
+            .catch(err => console.log(err))
+    }
 
     componentDidMount() {
       document.title = 'Warehouse Details'
@@ -50,11 +48,21 @@ export default class WarehouseDetailsPage extends Component {
           this.setState({
               chosenWarehouse: response.data
               })
+              console.log(response.data)
+            })
+            .catch(err => console.log(err))
+      const inventoryId = this.props.match.params.id
+      axios
+      .get(`http://localhost:9000/inventories/warehouses/${inventoryId}`)
+      // .get(`http://localhost:9000/warehouses/details/${warehouseId}`)
+        .then(response => {   
+          this.setState({
+              inventoryList: response.data[0]
+              })
+              console.log(response.data)
             })
             .catch(err => console.log(err))
       }
-    
-
       
     render () {
     return (
@@ -89,8 +97,7 @@ export default class WarehouseDetailsPage extends Component {
                 </div>
               </section>
             </section> 
-        {/* <HeaderPage/> */}
-        {/* <header> */}
+        <header>
           {/* <div className='warehouse__info'>
               <h1 className='warehouse__info--title'><img src={ArrowBack}/>{this.state.chosenWarehouse.name}</h1>
               
@@ -116,36 +123,38 @@ export default class WarehouseDetailsPage extends Component {
               </div>
           </section>
         </section>  */}
-
-        {/* <section className='inventory__container'>
+        {console.log(this.state.inventoryList)}
+        {/* {this.state.inventoryList.map(item  => ( */}
+        <section className='inventory__container'>
             <div className='inventory__container--top'>
               <div className='inventory__container--item'>
                 <p>INVENTORY ITEM</p>
-                <p className='inventory__container--item--name'>Television <img src={ArrowRight}/></p>
+                <p className='inventory__container--item--name'><img src={ArrowRight}/>{this.state.inventoryList.Name}</p>
+           
               </div>  
               <div className='inventory__container--status'>
                 <p>STATUS</p>
-                <p>IN STOCK</p>
+                <p>{this.state.inventoryList.status}</p>
               </div>
             </div>
           <section className='inventory__container--bottom'>
               <div className='inventory__container--category'>
                   <p>CATEGORY</p>
-                  <p>ELECTRONICS</p>
+                  <p>{this.state.inventoryList.category}</p>
               </div>
               <div className='inventory__container--qty'>
                   <p>QTY</p>
-                  <p>500</p>
+                  <p>{this.state.inventoryList.quantity}</p>
               </div>
              
           </section> 
           <div className='inventory__container--icons'>
-                <img src={Delete} />
-                <img src={Edit} />
+                <img src={Delete}/>
+                <img src={Edit}/>
           </div>
-        </section> */}
-
-        {/* </header>  */}
+        </section>
+        {/* ))} */}
+        </header> 
         
       
       </>
