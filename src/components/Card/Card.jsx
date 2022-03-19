@@ -2,6 +2,7 @@ import './Card.scss';
 import {Switch, Route} from 'react-router-dom';
 import Warehouses from '../../pages/Warehouses';
 import Inventory from '../../pages/Inventory';
+import Inventory_details from '../../pages/Inventory_details';
 
 export default function Card() {
     return (
@@ -12,9 +13,9 @@ export default function Card() {
                 <Route path="/warehouses" component={Warehouses} />
                 <Route path="/inventory" component={Inventory} />
                 {/* <Route path="/" component={} />
-                <Route path="/" component={} />
-                <Route path="/" component={} />
-                <Route path="/" component={} />
+                <Route path="/" component={} /> */}
+                <Route path="/inventory/details" component={Inventory_details} />
+                {/* <Route path="/" component={} />
                 <Route path="/" component={} />
                 <Route path="/" component={} /> */}
             </Switch>
