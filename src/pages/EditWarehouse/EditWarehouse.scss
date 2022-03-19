@@ -5,6 +5,25 @@
 @use '../../styles/partials/pad-marg' as *;
 @use '../../styles/partials/deskntab-fonts' as *;
 
+.warehouse__edit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    @include tablet {
+        width: 100%;
+        margin: 0 2rem 0 2rem;
+        padding: 0;
+    }
+    &--title {
+        display: flex;
+        justify-content: space-between;
+        @include tablet {
+            padding-bottom: 1rem
+        }
+    }
+}
 input {
     @include mobile-searchbar;
     box-sizing: border-box;

@@ -12,7 +12,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    // border-bottom: 1px solid grey;
     padding: 1rem;
     @include tablet {
         width: 100%;
@@ -20,7 +19,6 @@
         padding: 0;
     }
     &--title {
-        // width: 14rem;
         display: flex;
         justify-content: space-between;
     }
