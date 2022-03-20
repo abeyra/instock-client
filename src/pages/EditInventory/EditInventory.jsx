@@ -10,10 +10,10 @@ export default class EditInventory extends Component {
     item: {},
     inventoryData: [],
     quantity: 0,
-    radioToggle1: true,
-    radioToggle2: false,
-    instock: "In Stock",
-    stockStatus: true
+    radioToggle1: false,
+    radioToggle2: true,
+    instock: "Out of Stock",
+    stockStatus: false
   };
 
   componentDidMount() {
@@ -119,31 +119,33 @@ export default class EditInventory extends Component {
           </div>
 
             <form className="item-details" onSubmit={this.handleSubmit}>
-                <h2 className="item-details__title">Item Details</h2>  
+              <div className="item-details-container">
+                  <h2 className="item-details__title">Item Details</h2>  
 
-                <div className="item-details__name">
-                    <h4 className="item-details__label">Item Name</h4>
-                    <input className="item-details__name-input" placeholder={this.state.item.itemName} name="itemName" />
-                </div>
+                  <div className="item-details__name">
+                      <h4 className="item-details__label">Item Name</h4>
+                      <input className="item-details__name-input" placeholder={this.state.item.itemName} name="itemName" />
+                  </div>
 
-                <div className="item-details__description">
-                    <h4 className="item-details__label">Description</h4>
-                    <textarea className="item-details__description-input" placeholder={this.state.item.description} name="description"/>
-                </div>
+                  <div className="item-details__description">
+                      <h4 className="item-details__label">Description</h4>
+                      <textarea className="item-details__description-input" placeholder={this.state.item.description} name="description"/>
+                  </div>
 
-                <div className="item-details__category">
-                    <h4 className="item-details__label">Category</h4>
-                    <select className="item-details__category-input" name="category" id="">
-                      <option value="default">{this.state.item.category}</option>
-                       {this.state.inventoryData.filter((value, index, self) => index === self.findIndex((a) => a.category === value.category))
-                                .map((data) => {
-                                    return (
-                                        <option key={data.id} value={data.category}>
-                                            {data.category}    
-                                        </option>
-                                    )
-                                })}
-                    </select>
+                  <div className="item-details__category">
+                      <h4 className="item-details__label">Category</h4>
+                      <select className="item-details__category-input" name="category" id="">
+                        <option value="default">{this.state.item.category}</option>
+                        {this.state.inventoryData.filter((value, index, self) => index === self.findIndex((a) => a.category === value.category))
+                                  .map((data) => {
+                                      return (
+                                          <option key={data.id} value={data.category}>
+                                              {data.category}    
+                                          </option>
+                                      )
+                                  })}
+                      </select>
+                  </div>
                 </div>
 
                 <div className="item-details__availability">
@@ -152,7 +154,7 @@ export default class EditInventory extends Component {
                   <div className="item-details__status">
                     <h4 className="item-details__status-label">Status</h4>
                       <div className="item-details__status-options">
-                        <div className="item-details__status-options-1">
+                        <div className="item-details__status-options-1 item-details__status-options-1--opacity">
                             <input
                                 className="radio-input1"
                                 type="radio"
@@ -177,7 +179,7 @@ export default class EditInventory extends Component {
                       </div>
                     </div>
 
-                    <div className="item-details__quantity">
+                    <div className="item-details__quantity item-details__quantity--hidden">
                       <h4 className="item-details__label">Quantity</h4>
                       <input className="item-details__quantity-input" type="text" placeholder={0} name="quantity"/>
                     </div>
