@@ -30,7 +30,14 @@ export default class AddInventoryItem extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
-        
+        axios.post("http://localhost:9000/inventories", {
+            warehouseName: event.target.warehouseName.value,
+            itemName: event.target.itemName.value,
+            description: event.target.description.value,
+            category: event.target.category.value,
+            status: event.target.status.value,
+            quantity: event.target.quantity.value
+        })
     }
 
     render() {
@@ -53,12 +60,12 @@ export default class AddInventoryItem extends Component {
 
                     <div className="new-item__description">
                         <h4 className="new-item__label">Description</h4>
-                        <input className="new-item__description-input" type="text" name="itemDescription" placeholder="Please enter a brief item description."/>
+                        <input className="new-item__description-input" type="text" name="description" placeholder="Please enter a brief item description."/>
                     </div>
 
                     <div className="new-item__category">
                         <h4 className="new-item__label">Category</h4>
-                        <select className="new-item__category-input" name="itemCategory" id="">
+                        <select className="new-item__category-input" name="category" id="">
                             <option value="electronics">Electronics</option>
                             <option value="gear">Gear</option>
                             <option value="apparel">Apparel</option>
@@ -99,7 +106,7 @@ export default class AddInventoryItem extends Component {
 
                         <div className="new-item__quantity">
                             <h4 className="new-item__label">Quantity</h4>
-                            <input className="new-item__quantity-input" type="text" placeholder={this.state.quantity} />
+                            <input className="new-item__quantity-input" type="text" placeholder={this.state.quantity} name="quantity" />
                         </div>
 
                         <div className="new-item__warehouse">
