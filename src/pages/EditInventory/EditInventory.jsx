@@ -21,7 +21,6 @@ export default class EditInventory extends Component {
     axios
       .get(`http://localhost:9000/inventories/${itemId}`)
       .then(response => {
-        console.log(response.data);
         this.setState({
           item: response.data,
         });
@@ -31,7 +30,6 @@ export default class EditInventory extends Component {
       axios
       .get(`http://localhost:9000/inventories`)
       .then(response => {
-        console.log(response.data);
         this.setState({
           inventoryData: response.data,
         });

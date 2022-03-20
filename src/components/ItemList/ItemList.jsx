@@ -11,7 +11,6 @@ export default function ItemList({ list }) {
     const [name, setName] = useState('')
 
     function handleClick(truefalse, id, itemName,){
-        console.log(truefalse, id, itemName)
         setShow(truefalse)
         setID(id)
         setName(itemName)

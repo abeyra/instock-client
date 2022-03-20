@@ -18,7 +18,6 @@ export default class InventoryDetails extends Component {
     axios
       .get(`${listAPI}/${itemId}`)
       .then(response => {
-        console.log(response.data);
         this.setState({
           item: response.data,
         });
