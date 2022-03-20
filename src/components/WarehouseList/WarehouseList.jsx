@@ -22,8 +22,14 @@ class WarehouseList extends Component {
     componentDidMount(){
         axios.get(URL)
             .then((response) => {
-                this.setState({warehouse: response.data})
-                
+                this.setState({warehouse: response.data})  
+            })
+    }
+
+    componentDidUpdate(){
+        axios.get(URL)
+            .then((response) => {
+                this.setState({warehouse: response.data})  
             })
     }
     
@@ -50,23 +56,23 @@ class WarehouseList extends Component {
                             </div>
                     </div>  */}
                     
-                    <Modal onClose={() => this.setState({showModal: false})} show={this.state.showModal} id={this.state.id} name={this.state.name}/>
+                    <Modal onClose={() => this.setState({showModal: false})} show={this.state.showModal} id={this.state.id} name={this.state.name} route='warehouse'/>
                     <div className='header'>
-                       {this.state.warehouse.map((item, index) => {
+                       {this.state.warehouse.map((item) => {
                            return(
-                             <div className='header__container' >
+                             <div className='header__container' key={item.id}>
                                 <div className='header__size'>
-                                    <h3 className='header__title'>WAREHOUSE</h3>
-                                    <p className='header__data'>{item.name}</p>
-                                    <h3 className='header__title'>ADDRESS</h3>
-                                    <p className='header__data'>{item.address}, {item.city}, {item.country}</p>
+                                    <h3 className='list__field'>WAREHOUSE</h3>
+                                    <p className='list__record'>{item.name}</p>
+                                    <h3 className='list__field'>ADDRESS</h3>
+                                    <p className='list__record'>{item.address}, {item.city}, {item.country}</p>
                                     <img src={trash} alt='trash can icon' onClick={() => this.setState({showModal: true, id: item.id, name: item.name})} />
                                 </div>
                                 <div className='header__size'>
-                                    <h3 className='header__title'>CONTACT NAME</h3>
-                                    <p className='header__data'>{item.contact.name}</p>
-                                    <h3 className='header__title'>CONTACT INFORMATION</h3>
-                                    <p className='header__data'>{item.contact.phone} {item.contact.email}</p>
+                                    <h3 className='list__field'>CONTACT NAME</h3>
+                                    <p className='list__record'>{item.contact.name}</p>
+                                    <h3 className='list__field'>CONTACT INFORMATION</h3>
+                                    <p className='list__record'>{item.contact.phone} {item.contact.email}</p>
                                     <img className='header__edit' alt='edit pencil icon' src={edit}  />
                                 </div>    
                             </div>  
@@ -76,11 +82,7 @@ class WarehouseList extends Component {
                        
                     </div>
                 {/* </article> */}
-                
-            </div>
-            
-           
-           
+            </div>  
         )
     }  
 }

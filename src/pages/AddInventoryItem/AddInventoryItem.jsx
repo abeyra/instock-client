@@ -9,7 +9,11 @@ export default class AddInventoryItem extends Component {
 
     state = {
         inventoryData: [],
-        quantity: 0
+        quantity: 0,
+        radioToggle1: true,
+        radioToggle2: false,
+        instock: "In Stock",
+        stockStatus: true
     }
 
     componentDidMount() {
@@ -24,6 +28,30 @@ export default class AddInventoryItem extends Component {
                 .catch(error => {
                     console.log(error);
                 })
+    }
+
+    radioToggle = (event) => {
+        console.log(event.target.value);
+        if(event.target.value === "In Stock") {
+            this.setState({
+                radioToggle1: true,
+                radioToggle2: false,
+                stockStatus: true,
+                instock: "In Stock"
+            })
+           document.querySelector(".new-item__quantity").classList.remove("new-item__quantity--hidden");
+      
+        } else {
+            this.setState({
+                radioToggle1: false,
+                radioToggle2: true,
+                stockStatus: false,
+                instock: "Out of Stock",
+                quantity: 0,
+            })
+            document.querySelector(".new-item__quantity-input").value = 0;
+            document.querySelector(".new-item__quantity").classList.add("new-item__quantity--hidden");        
+        }
     }
 
     handleSubmit = (event) => {
@@ -59,7 +87,7 @@ export default class AddInventoryItem extends Component {
 
                     <div className="new-item__description">
                         <h4 className="new-item__label">Description</h4>
-                        <input className="new-item__description-input" type="text" name="description" placeholder="Please enter a brief item description."/>
+                        <textarea className="new-item__description-input" type="text" name="description" placeholder="Please enter a brief item description."/>
                     </div>
 
                     <div className="new-item__category">
@@ -87,6 +115,7 @@ export default class AddInventoryItem extends Component {
                                                 name="instock"
                                                 value="In Stock"
                                                 onChange={this.radioToggle}
+                                                checked={this.state.radioToggle1}
                                             />
                                             <label htmlFor="" className="radio-input1-label">In Stock</label>
                                         </div>
@@ -97,6 +126,7 @@ export default class AddInventoryItem extends Component {
                                                 name="outofstock"
                                                 value="Out of Stock"
                                                 onChange={this.radioToggle} 
+                                                checked={this.state.radioToggle2}
                                             />
                                             <label htmlFor="" className="radio-input2-label">Out of Stock</label>
                                         </div>
@@ -112,7 +142,8 @@ export default class AddInventoryItem extends Component {
                             <h4 className="new-item__label">Warehouse</h4>
                             <select className="new-item__quantity-input" name="warehouseName" id="" placeholder="Please select">
                                 <option value="default">Please select</option>
-                                {this.state.inventoryData.map((data) => {
+                                {this.state.inventoryData.filter((value, index, self) => index === self.findIndex((a) => a.warehouseName === value.warehouseName))
+                                .map((data) => {
                                     return (
                                         <option key={data.id} value={data.warehouseName}>
                                             {data.warehouseName}    
@@ -122,10 +153,14 @@ export default class AddInventoryItem extends Component {
                             </select>
                         </div>
 
+                        <Link to="/inventory">
                         <div className="new-item__buttons">
                             <button className="new-item__buttons-cancel">Cancel</button>
-                            <button className="new-item__buttons-submit" type='submit'>+ Add Item</button>
+                         
+                                <button className="new-item__buttons-submit" type='submit'>+ Add Item</button>
+                         
                         </div>
+                        </Link>
                     </div>
                 
 

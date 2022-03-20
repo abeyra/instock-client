@@ -16,9 +16,44 @@
     align-items: center;
     justify-content: center;
     &__content{
-        width: 500px;
-        height: 10rem;
+        position: relative;
+        width: 100%;
+        height: 100%;
         background-color: #fff;
+        @include tablet{
+            width: 90%;
+            height: 15rem;
+        }
+        &-close{
+            display: flex;
+            justify-content: flex-end;
+
+        }
+    }
+    &__buttons{
+        position: absolute;
+        bottom: 5rem;
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        &-container{
+            width: 100%;
+            background-color: red;
+        }
+    }
+    &__button-delete{
+        width: 163px;
+        height: 36px;
+        background: #C94515;//get variable 
+        border: none;
+        border-radius: 20px;
+    }
+    &__button-cancel{
+        width: 163px;
+        height: 36px;
+        background: #FFFFFF;//get variable 
+        border: 1px solid black;
+        border-radius: 20px;
     }
     
 }
