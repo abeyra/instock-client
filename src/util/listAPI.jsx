@@ -1,0 +1,1 @@
+export const listAPI = 'http://localhost:9000/inventories'

@@ -1,0 +1,237 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/buttons-text-links' as *;
+@use '../../styles/partials/pad-marg' as *;
+@use '../../styles/partials/mobile-fonts' as *;
+@use '../../styles/partials/deskntab-fonts' as *;
+
+.list:hover {
+    @include desktop {
+        background-color: $table-record-hover-color;
+    }
+}
+
+.list {
+    border-top: 1px solid $outline;
+    padding: 1rem 1.5rem 0 1.5rem;
+    display: flex;
+
+    @include tablet {
+        display: flex;
+        justify-content: flex-start;
+        padding: 0 2rem;
+    }
+
+    @include desktop {
+        padding: 0 2.5rem;
+    }
+
+    &__tablet {
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @include desktop {
+            display: flex;
+        }
+    }  
+
+    &__link {
+        border: 1px solid transparent;
+        display: flex;
+        align-items: center;
+        margin: 0 0 1rem 0;
+
+        @include tablet {
+            width: 9rem;
+            margin: 0 .55rem 0 0;
+        }
+
+        @include desktop {
+            margin: 0 4.3rem 0 0;
+        }
+
+            &--icon {
+                border: 1px solid transparent;
+                height: 0.625rem;
+                align-items: center;
+            }
+    }
+
+    &__stock-tablet {
+        @include tablet {
+            width: 5.7rem; 
+            margin: 0 1rem 0 0;
+            display: flex;
+            align-items: center;
+        }
+
+        @include desktop {
+            margin: 0 4.65rem 0 0;
+        }
+    }
+
+    &__field {
+        @include mobile-field-txt;
+        margin: 0 0 .25rem 0;
+
+        @include tablet {
+            display: none;
+        }
+
+        &--warehouse {
+            padding: 1.25rem 0 0 0;
+        }
+    }
+
+    &__record {
+        @include mobile-record-txt;
+
+        @include tablet {
+            @include deskntab-record-txt; 
+        }
+
+            &--link {
+                @include mobile-record-link;
+                margin: 0 0.725rem 0 0;
+
+                @include tablet {
+                    @include deskntab-record-link;
+                }
+            }
+
+            &--category {
+
+                @include tablet {
+                    width: 6.75rem;
+                    margin: 0 .55rem 0 0;
+                    display: flex;
+                    align-items: center;
+                }
+
+                @include desktop {
+                    margin: 0 4.3rem 0 0;
+                }
+            }
+
+            &--stock[data-status="Out of Stock"] {
+                @include mobile-record-out-of-stock;
+                background-color: $out-of-stock;
+                background: rgba(201, 69, 21, 0.07);
+                border-radius: $radius;
+                height: 1.5rem;
+                margin: 0 0 .85rem 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+
+                @include tablet {
+                    @include deskntab-record-out-of-stock;
+                    display: flex;
+                    align-items: center;
+                    margin: 1rem 0;
+                } 
+            }
+            &--stock[data-status="In Stock"] {
+                @include mobile-record-in-stock;
+                background-color: $in-stock;
+                background: rgba(21, 132, 99, 0.07);
+                border-radius: $radius;
+                height: 1.5rem;
+                margin: 0 0 .85rem 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @include tablet {
+                    @include deskntab-record-in-stock;
+                    display: flex;
+                    align-items: center;
+                    margin: 1rem 0;
+                } 
+            }
+
+            &--qty {
+                margin: 0 0 1rem 0;
+
+                @include tablet {
+                    width: 4rem;
+                    margin: 0 1.2rem 0 0;
+                    display: flex;
+                    align-items: center;                 
+                }
+
+                @include desktop {
+                    margin: 0 5rem 0 0;
+                }
+            }
+
+            &--warehouse {
+                @include tablet {
+                    width: 6rem;
+                    margin: 0 1rem 0 0;
+                    display: flex;
+                    align-items: center;
+                }
+
+                @include desktop {
+                    margin: 0 4.7rem 0 0;
+                }
+            }
+    }
+
+    &__1 {
+        margin: 0 1rem 0 0;   
+        display: flex;
+        flex-direction: column; 
+        width: 7.125rem;
+        
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            width: fit-content;
+            margin: 0;
+        }
+    }
+
+    &__2 {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+        }  
+    }
+
+    &__icons-div {
+        margin: 1.188rem 1.5rem 1.688rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet {
+            display: none;
+        }
+
+            &--tab {
+                display: none;
+
+                @include tablet {
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+    }
+
+    &__delete {
+        @include tablet {
+            margin: 0 .7rem 0 0;
+        }
+    }
+}
