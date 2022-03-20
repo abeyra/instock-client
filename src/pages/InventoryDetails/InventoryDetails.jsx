@@ -33,10 +33,12 @@ export default class InventoryDetails extends Component {
               <img src={backArrow} alt="back arrow" />
             </Link>
             <CardHeader text={this.state.item.itemName} />
-            <div className="card__button">
-              <img src={edit} alt="edit button" />
-              <p className="card__button-text">Edit</p>
-            </div>
+            <Link className="card__header-button-link" to={"/inventory/edit"}>
+              <div className="card__button">
+                <img src={edit} alt="edit button" />
+                <p className="card__button-text">Edit</p>
+              </div>
+            </Link>
           </div>
          
           <div className="item">

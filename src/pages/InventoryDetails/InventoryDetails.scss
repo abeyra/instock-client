@@ -97,6 +97,12 @@
     @include tablet {
         padding: 0 2rem;
     }
+
+    &-button-link {
+        @include tablet {
+            margin-bottom: 2.5rem;
+        }
+    }
 }
 
 .card__button {
