@@ -4,6 +4,7 @@ import edit from '../../assets/icons/edit-24px.svg'
 import { Component } from 'react/cjs/react.production.min';
 import axios from 'axios';
 import Modal from '../Modal/Modal'
+import { Link } from 'react-router-dom';
 
 const URL = 'http://localhost:9000/warehouses/'
 

@@ -2,10 +2,8 @@ import { Component } from 'react/cjs/react.development';
 import { Link } from 'react-router-dom';
 import './EditWarehouse.scss';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
 import ArrowBack from '../../assets/icons/arrow_back-24px.svg';
 import CardHeader from '../../components/CardHeader';
-import { get } from 'lodash';
 
 export default class Inventory extends Component {
   
@@ -79,9 +77,11 @@ export default class Inventory extends Component {
     handleSubmit = (e) => {
     e.preventDefault();
     
+    
+    let id = this.props.match.params.id;
     const validEmail = this.validateEmail();
     const validInputs = this.validateInputs();
-    let id = this.props.match.params.id;
+ 
     
     if (validEmail && validInputs) {
       axios.put(`http://localhost:9000/warehouses/edit/${id}`, {
@@ -97,8 +97,7 @@ export default class Inventory extends Component {
         }
       })
       .then (res => {
-        this.props.history.push(`/warehouses/${id}`)
-        return this.props.onChangeHandler(res.data)
+        this.props.history.push(`/warehouses`)
       })
       .catch(err => {
         console.log(err)

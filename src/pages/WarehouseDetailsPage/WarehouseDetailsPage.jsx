@@ -3,7 +3,7 @@ import React from 'react';
 import ArrowBack from '../../assets/icons/arrow_back-24px.svg';
 import axios from 'axios';
 import { Component } from 'react';
-import { withRouter,Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import Edit from '../../assets/icons/edit-24px.svg'
 import Delete from '../../assets/icons/delete_outline-24px.svg'
 import ArrowRight from '../../assets/icons/chevron_right-24px.svg'
@@ -71,11 +71,11 @@ export default class WarehouseDetailsPage extends Component {
          <div className="card__tablet">
               <div className='warehouse__info'>
                 <div className='warehouse__info--title'>
-                    <img src={ArrowBack}/>
+                    <Link to={`/warehouses`}><img src={ArrowBack}/></Link>
                     <CardHeader text={this.state.chosenWarehouse.name} />
                 </div>
-                  <span className='warehouse__info--edit-wrap'><img src={Edit}/></span>
-                  <span className='warehouse__info--edit-wrap--big'><img src={Edit}/> Edit</span>
+                  <Link to={`/editwarehouse/${this.state.chosenWarehouse.id}`}><span className='warehouse__info--edit-wrap'><img src={Edit}/></span></Link>
+                  <Link to={`/editwarehouse/${this.state.chosenWarehouse.id}`}><span className='warehouse__info--edit-wrap--big'><img src={Edit}/> Edit</span></Link>
               </div>
             </div>
             <section className='warehouse__container'>
