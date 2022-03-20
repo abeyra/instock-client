@@ -13,7 +13,7 @@ export default class Inventory extends Component {
         list: []
     }
 
-    componentDidMount() {
+     componentDidMount() {
         axios
             .get(listAPI)
             .then(response => {

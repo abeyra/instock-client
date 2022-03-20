@@ -2,8 +2,10 @@ import './Item.scss';
 import Trash  from '../../assets/icons/delete_outline-24px.svg';
 import Edit from '../../assets/icons/edit-24px.svg';
 import Chevron from '../../assets/icons/chevron_right-24px.svg';
+import { Link } from 'react-router-dom';
 
 export default function Item({ handleClick, id, itemName, category, status, quantity, warehouseName  }) {
+
     return (
         <>
         
@@ -14,9 +16,12 @@ export default function Item({ handleClick, id, itemName, category, status, quan
                         Inventory Item
                     </h4>
                         <div className="list__link">
-                            <h3 className="list__record list__record--link">
-                                {itemName}
-                            </h3>
+                         
+                                <h3 className="list__record list__record--link">
+                                    <Link to={`/inventory/${id}`}  >
+                                        {itemName}
+                                    </Link>
+                                </h3>                       
                             <img
                             className="list__link--icon" 
                             src={Chevron}

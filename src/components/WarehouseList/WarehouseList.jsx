@@ -1,5 +1,4 @@
 import './WarehouseList.scss'; 
-//import '../Item/Item.scss'
 import trash from '../../assets/icons/delete_outline-24px.svg';
 import edit from '../../assets/icons/edit-24px.svg'
 import { Component } from 'react/cjs/react.production.min';

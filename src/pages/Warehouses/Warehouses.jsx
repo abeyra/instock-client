@@ -1,5 +1,4 @@
 import "./Warehouses.scss";
-import PhilsCard from "../../components/PhilsCard/PhilsCard";
 import Search from "../../components/Search";
 import Button from "../../components/Button";
 import CardHeader from "../../components/CardHeader";
