@@ -3,8 +3,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import CardHeader from "../../components/CardHeader";
 import "./InventoryDetails.scss";
-import edit from '../../assets/Icons/edit-24px.svg';
-import backArrow from '../../assets/Icons/arrow_back-24px.svg';
+import edit from '../../assets/icons/edit-24px.svg';
+import backArrow from '../../assets/icons/arrow_back-24px.svg';
 import { listAPI } from '../../util/listAPI';
 
 

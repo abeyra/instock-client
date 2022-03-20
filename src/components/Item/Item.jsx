@@ -1,7 +1,7 @@
 import './Item.scss';
-import Trash  from '../../assets/Icons/delete_outline-24px.svg';
-import Edit from '../../assets/Icons/edit-24px.svg';
-import Chevron from '../../assets/Icons/chevron_right-24px.svg';
+import Trash  from '../../assets/icons/delete_outline-24px.svg';
+import Edit from '../../assets/icons/edit-24px.svg';
+import Chevron from '../../assets/icons/chevron_right-24px.svg';
 import { Link } from 'react-router-dom';
 
 export default function Item({ handleClick, id, itemName, category, status, quantity, warehouseName  }) {

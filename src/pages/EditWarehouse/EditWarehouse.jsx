@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './EditWarehouse.scss';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
+import ArrowBack from '../../assets/icons/arrow_back-24px.svg';
 import CardHeader from '../../components/CardHeader';
 import { get } from 'lodash';
 
