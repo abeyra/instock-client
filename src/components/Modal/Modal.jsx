@@ -36,7 +36,7 @@ function Modal(props) {
         if (props.route === 'warehouse') headerMsg = `Warehouse`
         if (props.route === 'inventory') headerMsg = `Inventory Item`
 
-        const modalMessage = `Please confirm that you\'d like to delete ${firstMsg} from the ${locationMsg}. 
+        const modalMessage = `Please confirm that you'd like to delete ${firstMsg} from the ${locationMsg}. 
         You won't be able to undo this action.`
 
         const modalHeader = `Delete ${props.name} ${headerMsg} ?`

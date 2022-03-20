@@ -77,14 +77,12 @@ export default class WarehouseList extends Component {
         <div className="header">
           {this.state.warehouse.map((item) => {
             return (
-              <Link to={`/details/${item.id}`}>
               <div className="header__container" key={item.id}>
-              
                 <div className="warehouse-list">
                   <div className="warehouse-list__1">
                     <h4 className="warehouse-list__field">Warehouse</h4>
                     <div className="warehouse-list__link">
-                      <Link to="">
+                      <Link to={`/details/${item.id}`}>
                         <p className="warehouse-list__record warehouse-list__record--link">
                           {item.name}
                         </p>
@@ -128,11 +126,13 @@ export default class WarehouseList extends Component {
                       />
                     </div>
                     <div className="warehouse-list__icons--2">
+                      <Link to={`/editwarehouse/${item.id}`}>
                       <img
                         className="warehouse-list__edit"
                         src={Edit}
                         alt="Edit icon."
                       />
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -152,15 +152,16 @@ export default class WarehouseList extends Component {
                     />
                   </div>
                   <div className="warehouse-list__icons--2">
+                    <Link to={`/editwarehouse/${item.id}`}>
                     <img
                       className="warehouse-list__edit"
                       src={Edit}
                       alt="Edit icon."
                     />
+                    </Link>
                   </div>
                 </div>
               </div>
-              </Link>
             );
           })}
         </div>
