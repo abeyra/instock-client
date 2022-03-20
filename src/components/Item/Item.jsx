@@ -5,6 +5,7 @@ import Chevron from '../../assets/icons/chevron_right-24px.svg';
 import { Link } from 'react-router-dom';
 
 export default function Item({ handleClick, id, itemName, category, status, quantity, warehouseName  }) {
+
     return (
         <>
         
