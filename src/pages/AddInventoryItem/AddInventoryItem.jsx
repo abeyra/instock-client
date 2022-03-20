@@ -1,5 +1,5 @@
 import './AddInventoryItem.scss';
-import backArrow from '../../assets/icons/arrow_back-24px.svg';
+import backArrow from '../../assets/Icons/arrow_back-24px.svg';
 import { Link, Redirect, Route } from 'react-router-dom';
 import CardHeader from "../../components/CardHeader";
 import { Component } from 'react';

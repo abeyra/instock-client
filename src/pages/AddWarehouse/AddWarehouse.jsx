@@ -2,7 +2,7 @@ import { Component } from 'react/cjs/react.development';
 import './AddWarehouse.scss';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import backArrow from '../../assets/icons/arrow_back-24px.svg';
+import backArrow from '../../assets/Icons/arrow_back-24px.svg';
 import CardHeader from '../../components/CardHeader';
 import { v4 as uuidv4 } from 'uuid'
 

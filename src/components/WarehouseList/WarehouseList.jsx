@@ -1,12 +1,12 @@
 import "./WarehouseList.scss";
-import Trash from "../../assets/icons/delete_outline-24px.svg";
-import Edit from "../../assets/icons/edit-24px.svg";
+import Trash from "../../assets/Icons/delete_outline-24px.svg";
+import Edit from "../../assets/Icons/edit-24px.svg";
 import { Component } from "react/cjs/react.production.min";
 import axios from "axios";
 import Modal from "../Modal/Modal";
 import { warehouseAPI } from "../../util/warehouseAPI";
-import Chevron from "../../assets/icons/chevron_right-24px.svg";
-import Sort from "../../assets/icons/sort-24px.svg";
+import Chevron from "../../assets/Icons/chevron_right-24px.svg";
+import Sort from "../../assets/Icons/sort-24px.svg";
 import { Link } from "react-router-dom";
 
 export default class WarehouseList extends Component {

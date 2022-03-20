@@ -2,7 +2,7 @@ import './EditInventory.scss';
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import backArrow from '../../assets/icons/arrow_back-24px.svg';
+import backArrow from '../../assets/Icons/arrow_back-24px.svg';
 import CardHeader from "../../components/CardHeader";
 
 export default class EditInventory extends Component {

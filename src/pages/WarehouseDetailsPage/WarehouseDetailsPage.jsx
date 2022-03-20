@@ -1,14 +1,14 @@
 import './WarehouseDetailsPage.scss';
 import React from 'react';
-import ArrowBack from '../../assets/icons/arrow_back-24px.svg';
+import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
 import axios from 'axios';
 import { Component } from 'react';
 import { withRouter,Link } from 'react-router-dom';
-import Edit from '../../assets/icons/edit-24px.svg'
-import Delete from '../../assets/icons/delete_outline-24px.svg'
-import ArrowRight from '../../assets/icons/chevron_right-24px.svg'
+import Edit from '../../assets/Icons/edit-24px.svg'
+import Delete from '../../assets/Icons/delete_outline-24px.svg'
+import ArrowRight from '../../assets/Icons/chevron_right-24px.svg'
 import Card from '../../components/Card/Card';
-import Sort from '../../assets/icons/sort-24px.svg';
+import Sort from '../../assets/Icons/sort-24px.svg';
 
 import CardHeader from '../../components/CardHeader';
 import Button from '../../components/Button';
