@@ -61,6 +61,10 @@
         }
     }
 
+    .search:hover, .search:focus {
+        border: 2px solid $form-outline-focus;
+    }
+
     &__btn {
         padding: 0 0 1rem 0;
         

@@ -34,6 +34,12 @@ $deskntab-line-p3: 1.125rem;
     line-height: $deskntab-line-p2;
 }
 
+@mixin deskntab-body-large {
+    font-size: $deskntab-body-lrg;
+    color: $primary-txt-color;
+    line-height: $deskntab-line-p1;
+}
+
 @mixin deskntab-links-buttons-txt {
     font-weight: 600;
     font-size: $deskntab-links;
@@ -66,4 +72,13 @@ $deskntab-line-p3: 1.125rem;
     font-weight: 600;
     line-height: $deskntab-line-p3;
     color: $in-stock;
+    text-transform: uppercase;
+}
+
+@mixin deskntab-record-out-of-stock {
+    font-size: $deskntab-body-sm;
+    font-weight: 600;
+    line-height: $deskntab-line-p3;
+    color: $out-of-stock;
+    text-transform: uppercase;
 }

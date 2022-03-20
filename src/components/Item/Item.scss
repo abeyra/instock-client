@@ -41,7 +41,6 @@
         @include tablet {
             width: 9rem;
             margin: 0 .55rem 0 0;
-            // border: 1px solid green;
         }
 
         @include desktop {
@@ -61,7 +60,6 @@
             margin: 0 1rem 0 0;
             display: flex;
             align-items: center;
-            // border: 1px solid blue;
         }
 
         @include desktop {
@@ -105,7 +103,6 @@
                     margin: 0 .55rem 0 0;
                     display: flex;
                     align-items: center;
-                    // border: 1px solid red;
                 }
 
                 @include desktop {
@@ -114,19 +111,19 @@
             }
 
             &--stock[data-status="Out of Stock"] {
-                @include mobile-record-in-stock;
-                background-color: green;
-                background: red;
+                @include mobile-record-out-of-stock;
+                background-color: $out-of-stock;
+                background: rgba(201, 69, 21, 0.07);
                 border-radius: $radius;
                 height: 1.5rem;
-                text-transform: uppercase;
                 margin: 0 0 .85rem 0;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                
 
                 @include tablet {
-                    @include deskntab-record-in-stock;
+                    @include deskntab-record-out-of-stock;
                     display: flex;
                     align-items: center;
                     margin: 1rem 0;
@@ -134,11 +131,10 @@
             }
             &--stock[data-status="In Stock"] {
                 @include mobile-record-in-stock;
-                background-color: green;
+                background-color: $in-stock;
                 background: rgba(21, 132, 99, 0.07);
                 border-radius: $radius;
                 height: 1.5rem;
-                text-transform: uppercase;
                 margin: 0 0 .85rem 0;
                 display: flex;
                 align-items: center;
@@ -159,8 +155,7 @@
                     width: 4rem;
                     margin: 0 1.2rem 0 0;
                     display: flex;
-                    align-items: center;
-                    // border: 1px solid green;                    
+                    align-items: center;                 
                 }
 
                 @include desktop {
@@ -174,7 +169,6 @@
                     margin: 0 1rem 0 0;
                     display: flex;
                     align-items: center;
-                    // border: 1px solid orange; 
                 }
 
                 @include desktop {
