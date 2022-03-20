@@ -1,6 +1,6 @@
 import './Modal.scss'
 import axios from 'axios'
-import close from '../../assets/icons/close-24px.svg'
+import close from '../../assets/Icons/close-24px.svg'
 
 function Modal(props) {
 

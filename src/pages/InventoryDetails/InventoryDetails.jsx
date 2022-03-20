@@ -3,8 +3,10 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import CardHeader from "../../components/CardHeader";
 import "./InventoryDetails.scss";
-import edit from '../../assets/icons/edit-24px.svg';
-import backArrow from '../../assets/icons/arrow_back-24px.svg';
+import edit from '../../assets/Icons/edit-24px.svg';
+import backArrow from '../../assets/Icons/arrow_back-24px.svg';
+import { listAPI } from '../../util/listAPI';
+
 
 export default class InventoryDetails extends Component {
   state = {
@@ -14,7 +16,7 @@ export default class InventoryDetails extends Component {
   componentDidMount() {
     const itemId = this.props.match.params.id;
     axios
-      .get(`http://localhost:9000/inventories/${itemId}`)
+      .get(`${listAPI}/${itemId}`)
       .then(response => {
         console.log(response.data);
         this.setState({

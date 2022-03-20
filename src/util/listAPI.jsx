@@ -1,1 +1,1 @@
-export const listAPI = "http://localhost:9000/inventories"
+export const listAPI = 'http://localhost:9000/inventories'
