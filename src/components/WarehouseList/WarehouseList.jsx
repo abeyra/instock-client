@@ -7,19 +7,15 @@ import Modal from '../Modal/Modal'
 import { warehouseAPI } from '../../util/warehouseAPI';
 import Chevron from '../../assets/icons/chevron_right-24px.svg';
 import Sort from '../../assets/icons/sort-24px.svg';
-
+import { Link } from 'react-router-dom';
 
 
 export default class WarehouseList extends Component {
-    state = (
-        {
-            warehouse: [],
-            showModal: false,
-            
-        }
-    )
+    state = {
+        warehouse: [],
+        showModal: false,
+    }
     
-
     componentDidMount(){
         axios.get(warehouseAPI)
             .then((response) => {
@@ -34,7 +30,7 @@ export default class WarehouseList extends Component {
             })
     }
     
-    render(){
+    render() {
         
         if (this.state.warehouse === []){
             return <h1>Loading....</h1>
@@ -95,17 +91,17 @@ export default class WarehouseList extends Component {
                     {this.state.warehouse.map((item) => {
                         return(
                             <div className='header__container' key={item.id}>
-                            {/* <div className='header__size'> */}
-                            {/* <div className="warehouse-list__tablet2"> */}
                                 <div className="warehouse-list">
                                     <div className="warehouse-list__1">
                                         <h4 className='warehouse-list__field'>
                                             Warehouse
                                         </h4>
-                                            <div className="warehouse-list__link">    
+                                            <div className="warehouse-list__link"> 
+                                            <Link to="">
                                                 <p className='warehouse-list__record warehouse-list__record--link'>
                                                     {item.name}
                                                 </p>
+                                                </Link>
                                                 <img
                                                 className="warehouse-list__link--icon" 
                                                 src={Chevron}
@@ -132,8 +128,7 @@ export default class WarehouseList extends Component {
                                                 <p className='warehouse-list__record warehouse-list__record--info'>
                                                     {item.contact.phone} {item.contact.email}
                                                 </p>
-                                                {/* <img src={trash} alt='trash can icon' onClick={() => this.setState({showModal: true, id: item.id, name: item.name})} />
-                                                <img className='header__edit' alt='edit pencil icon' src={edit}  /> */}
+                
                                            </div>
                                            <div className="warehouse-list__icons-div--tab">
                                                 <div className="warehouse-list__icons">
@@ -171,7 +166,7 @@ export default class WarehouseList extends Component {
                                                         />
                                                     </div>
                                             </div>          
-                            {/* </div> */}
+                           
                             </div>
                         )  
                     })} 
