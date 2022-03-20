@@ -11,12 +11,21 @@
     box-sizing: border-box;
     width: 100%;
     margin: 1rem 0;
+    background-image: url('../../assets/Icons/search-24px.svg');
+    background-repeat: no-repeat;
+    background-position-x: 12.5rem;
+    background-position-y: center;
 
     @include tablet {
         @include deskntab-searchbar;
+        background-position-x: 9rem;
+    }
+
+    @include desktop {
+        background-position-x: 15rem;
     }
 }
 
-.search:hover {
+.search:hover, .search:focus {
     @include mobile-cta-hover;
 }
