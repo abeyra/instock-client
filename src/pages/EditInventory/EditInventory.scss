@@ -1,0 +1,13 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/buttons-text-links' as *;
+@use '../../styles/partials/pad-marg' as *;
+@use '../../styles/partials/mobile-fonts' as *;
+
+.item-details {
+    border-top: .0625rem solid $outline;
+    padding: 1rem 1.5rem 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
