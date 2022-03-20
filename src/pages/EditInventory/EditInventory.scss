@@ -10,4 +10,110 @@
     padding: 1rem 1.5rem 0 1.5rem;
     display: flex;
     flex-direction: column;
+
+    &__title {
+        font-size: 24px; 
+        margin-bottom: 1rem;
+    }
+
+    &__label {
+
+    }
+
+    &__name {
+
+        &-input {
+            @include mobile-searchbar;
+            box-sizing: border-box;
+            width: 100%;
+            margin: 8px 0;
+        }
+    }
+
+    &__description {
+
+        &-input {
+            @include mobile-searchbar;
+            box-sizing: border-box;
+            width: 100%;
+            height: 6rem;
+            margin: 8px 0;
+            resize: none;
+        }
+    }
+
+    &__category {
+
+        &-input {
+            @include mobile-searchbar;
+            box-sizing: border-box;
+            width: 100%;
+            margin: 8px 0;
+        }
+    }
+
+    &__availability {
+        padding-top: 1rem;
+    }
+
+    &__status {
+
+        &-label {
+            padding-bottom: .5rem;
+        }
+
+        &-options {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__quantity {
+
+        margin: 1rem 0;
+
+        &-input {
+            @include mobile-searchbar;
+            box-sizing: border-box;
+            width: 100%;
+            margin: 8px 0;
+        }
+
+        &--hidden {
+            display: none;
+        }
+    }
+
+    &__warehouse {
+
+        &-input {
+            @include mobile-searchbar;
+            box-sizing: border-box;
+            width: 100%;
+            margin: 8px 0;
+        }
+    }
+
+     &__buttons {
+
+        display: flex;
+        justify-content: space-between;
+        margin: 1.5rem 0 1rem 0;
+
+        &-cancel {
+            @include mobile-primary-cta-dflt;
+            background-color: white;
+            border: 1px solid black;
+            color: black; 
+            cursor: pointer;
+            width: 47%;
+        }
+
+        &-save {
+            @include mobile-primary-cta-dflt;
+            cursor: pointer;
+            color: white;
+            width: 47%;
+        }
+    }
 }
