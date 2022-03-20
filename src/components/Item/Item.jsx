@@ -4,7 +4,7 @@ import Edit from '../../assets/icons/edit-24px.svg';
 import Chevron from '../../assets/icons/chevron_right-24px.svg';
 import { Link } from 'react-router-dom';
 
-export default function Item({ itemName, category, status, quantity, warehouseName  }) {
+export default function Item({ id, itemName, category, status, quantity, warehouseName  }) {
     return (
         <>
         <div className="list__tablet">
@@ -14,20 +14,12 @@ export default function Item({ itemName, category, status, quantity, warehouseNa
                         Inventory Item
                     </h4>
                         <div className="list__link">
-                            <Link to={{
-                                path: "inventory/details",
-                                state: {
-                                    itemName: itemName,
-                                    category: category,
-                                    status: status,
-                                    quantity: quantity,
-                                    warehouseName: warehouseName
-                                },
-                            }} >
+                         
                                 <h3 className="list__record list__record--link">
-                                    {itemName}
-                                </h3>
-                            </Link>
+                                    <Link to={`/inventory/${id}`}  >
+                                        {itemName}
+                                    </Link>
+                                </h3>                       
                             <img
                             className="list__link--icon" 
                             src={Chevron}
