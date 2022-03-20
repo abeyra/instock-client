@@ -1,0 +1,1 @@
+export const warehouseAPI = 'http://localhost:9000/warehouses/'
