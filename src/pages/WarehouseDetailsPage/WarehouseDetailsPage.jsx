@@ -9,6 +9,7 @@ import Delete from '../../assets/Icons/delete_outline-24px.svg'
 import ArrowRight from '../../assets/Icons/chevron_right-24px.svg'
 import Card from '../../components/Card/Card';
 import CardHeader from '../../components/CardHeader';
+import ItemList from '../../components/ItemList';
 // import InventoryList from '../../components/InventoryList/InventoryList';
 
 export default class WarehouseDetailsPage extends Component {
@@ -57,7 +58,7 @@ export default class WarehouseDetailsPage extends Component {
       // .get(`http://localhost:9000/warehouses/details/${warehouseId}`)
         .then(response => {   
           this.setState({
-              inventoryList: response.data[0]
+              inventoryList: response.data
               })
               console.log(response.data)
             })
@@ -122,29 +123,29 @@ export default class WarehouseDetailsPage extends Component {
                   <p>{this.state.chosenWarehouse.contact?.email}</p>
               </div>
           </section>
-        </section>  */}
-        {console.log(this.state.inventoryList)}
-        {/* {this.state.inventoryList.map(item  => ( */}
-        <section className='inventory__container'>
+        </section> */}
+        {/* {console.log(this.state?.inventoryList, "test")}
+        {this.state?.inventoryList.map(item  => (
+         <section className='inventory__container' key={item.id}>
             <div className='inventory__container--top'>
               <div className='inventory__container--item'>
                 <p>INVENTORY ITEM</p>
-                <p className='inventory__container--item--name'><img src={ArrowRight}/>{this.state.inventoryList.Name}</p>
+                <p className='inventory__container--item--name'><img src={ArrowRight}/>{item.itemName}</p>
            
               </div>  
               <div className='inventory__container--status'>
                 <p>STATUS</p>
-                <p>{this.state.inventoryList.status}</p>
+                <p>{item.status}</p>
               </div>
             </div>
           <section className='inventory__container--bottom'>
               <div className='inventory__container--category'>
                   <p>CATEGORY</p>
-                  <p>{this.state.inventoryList.category}</p>
+                  <p>{item.category}</p>
               </div>
               <div className='inventory__container--qty'>
                   <p>QTY</p>
-                  <p>{this.state.inventoryList.quantity}</p>
+                  <p>{item.quantity}</p>
               </div>
              
           </section> 
@@ -152,9 +153,11 @@ export default class WarehouseDetailsPage extends Component {
                 <img src={Delete}/>
                 <img src={Edit}/>
           </div>
-        </section>
-        {/* ))} */}
+        </section> 
+        ))}  */}
+        <ItemList list={this.state?.inventoryList}/>
         </header> 
+        
         
       
       </>
