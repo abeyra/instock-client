@@ -65,6 +65,24 @@
         &-options {
             display: flex;
             justify-content: space-between;
+
+            @include tablet {
+                justify-content: flex-start;
+            }
+
+            &-1 {
+                margin-right: 15%;
+
+                &--opacity {
+                    opacity: .5;
+                }
+            }
+
+            &-2 {
+                &--opacity {
+                    opacity: .5;
+                }
+            }
         }
     }
 
@@ -103,7 +121,7 @@
         &-cancel {
             @include mobile-primary-cta-dflt;
             background-color: white;
-            border: 1px solid black;
+            border: 1px solid $outline;
             color: black; 
             cursor: pointer;
             width: 33%;

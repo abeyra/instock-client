@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import backArrow from '../../assets/icons/arrow_back-24px.svg';
 import CardHeader from "../../components/CardHeader";
-import Search from '../../components/Search';
 
 export default class EditInventory extends Component {
     state = {
@@ -50,7 +49,8 @@ export default class EditInventory extends Component {
               instock: "In Stock"
           })
           document.querySelector(".item-details__quantity").classList.remove("item-details__quantity--hidden");
-    
+          document.querySelector(".item-details__status-options-2").classList.add("item-details__status-options-2--opacity");
+          document.querySelector(".item-details__status-options-1").classList.remove("item-details__status-options-1--opacity"); 
       } else {
           this.setState({
               radioToggle1: false,
@@ -60,7 +60,9 @@ export default class EditInventory extends Component {
               quantity: 0,
           })
           document.querySelector(".item-details__quantity-input").value = 0;
-          document.querySelector(".item-details__quantity").classList.add("item-details__quantity--hidden");        
+          document.querySelector(".item-details__quantity").classList.add("item-details__quantity--hidden"); 
+          document.querySelector(".item-details__status-options-1").classList.add("item-details__status-options-1--opacity");  
+          document.querySelector(".item-details__status-options-2").classList.remove("item-details__status-options-2--opacity");      
       }
     }
 
@@ -150,7 +152,7 @@ export default class EditInventory extends Component {
                   <div className="item-details__status">
                     <h4 className="item-details__status-label">Status</h4>
                       <div className="item-details__status-options">
-                        <div>
+                        <div className="item-details__status-options-1">
                             <input
                                 className="radio-input1"
                                 type="radio"
@@ -161,7 +163,7 @@ export default class EditInventory extends Component {
                             />
                             <label htmlFor="" className="radio-input1-label">In Stock</label>
                         </div>
-                        <div>
+                        <div className="item-details__status-options-2">
                             <input
                                 className="radio-input2"
                                 type="radio"
