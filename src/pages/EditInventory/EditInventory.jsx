@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import backArrow from '../../assets/icons/arrow_back-24px.svg';
 import CardHeader from "../../components/CardHeader";
+import Search from '../../components/Search';
 
 export default class EditInventory extends Component {
     state = {
@@ -33,7 +34,19 @@ export default class EditInventory extends Component {
             <CardHeader text="Edit Inventory Item" />
           </div>
 
-            
+            <div className="item-details">
+                <h2>Item Details</h2>  
+
+                <div className="item-details__name">
+                    <h4 className="item-details__name-title">Item Name</h4>
+                    <Search placeholder={this.state.item.itemName} />
+                </div>
+
+                <div>
+                    <h4>Description</h4>
+                    <Search placeholder={this.state.item.description}/>
+                </div>
+            </div>
           </>
       )
   }
