@@ -1,6 +1,6 @@
 import './AddInventoryItem.scss';
 import backArrow from '../../assets/icons/arrow_back-24px.svg';
-import { Link } from 'react-router-dom';
+import { Link, Redirect, Route } from 'react-router-dom';
 import CardHeader from "../../components/CardHeader";
 import { Component } from 'react';
 import axios from 'axios';
@@ -56,6 +56,7 @@ export default class AddInventoryItem extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        console.log('in submit');
 
         axios.post("http://localhost:9000/inventories", {
             warehouseName: event.target.warehouseName.value,
@@ -64,7 +65,14 @@ export default class AddInventoryItem extends Component {
             category: event.target.category.value,
             status: event.target.status.value,
             quantity: event.target.quantity.value
-        })
+        }) 
+
+        return (
+            <Route>
+                <Redirect to='/inventories' />
+            </Route>
+        )
+      
     }
 
     render() {
@@ -93,11 +101,15 @@ export default class AddInventoryItem extends Component {
                     <div className="new-item__category">
                         <h4 className="new-item__label">Category</h4>
                         <select className="new-item__category-input" name="category" id="">
-                            <option value="electronics">Electronics</option>
-                            <option value="gear">Gear</option>
-                            <option value="apparel">Apparel</option>
-                            <option value="accessories">Accessories</option>
-                            <option value="health">Health</option>
+                             <option value="default">Please select</option>
+                             {this.state.inventoryData.filter((value, index, self) => index === self.findIndex((a) => a.category === value.category))
+                                .map((data) => {
+                                    return (
+                                        <option key={data.id} value={data.category}>
+                                            {data.category}    
+                                        </option>
+                                    )
+                                })}
                         </select>
                     </div>
 
@@ -112,7 +124,7 @@ export default class AddInventoryItem extends Component {
                                             <input
                                                 className="radio-input1"
                                                 type="radio"
-                                                name="instock"
+                                                name="status"
                                                 value="In Stock"
                                                 onChange={this.radioToggle}
                                                 checked={this.state.radioToggle1}
@@ -123,7 +135,7 @@ export default class AddInventoryItem extends Component {
                                             <input
                                                 className="radio-input2"
                                                 type="radio"
-                                                name="outofstock"
+                                                name="status"
                                                 value="Out of Stock"
                                                 onChange={this.radioToggle} 
                                                 checked={this.state.radioToggle2}
@@ -153,14 +165,16 @@ export default class AddInventoryItem extends Component {
                             </select>
                         </div>
 
-                        <Link to="/inventory">
+
+                        
+                       
                         <div className="new-item__buttons">
+                   
                             <button className="new-item__buttons-cancel">Cancel</button>
-                         
-                                <button className="new-item__buttons-submit" type='submit'>+ Add Item</button>
-                         
+                     
+                            <button className="new-item__buttons-submit">+ Add Item</button>
+                     
                         </div>
-                        </Link>
                     </div>
                 
 
