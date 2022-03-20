@@ -28,6 +28,13 @@ $mobile-body-sm: 0.688rem;
     line-height: 1.25rem;
 }
 
+@mixin mobile-body-large {
+    font-family: 'TitilliumWeb';
+    font-size: $mobile-body-lrg;
+    color: $primary-txt-color;
+    line-height: 1.625rem;
+}
+
 @mixin mobile-links-buttons-txt {
     font-weight: 600;
     font-size: $mobile-links;
@@ -60,4 +67,13 @@ $mobile-body-sm: 0.688rem;
     font-weight: 600;
     line-height: 1rem;
     color: $in-stock;
+    text-transform: uppercase;
+}
+
+@mixin mobile-record-out-of-stock {
+    font-size: $mobile-body-sm;
+    font-weight: 600;
+    line-height: 1rem;
+    color: $out-of-stock;
+    text-transform: uppercase;
 }

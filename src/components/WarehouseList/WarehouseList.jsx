@@ -11,15 +11,11 @@ import Sort from '../../assets/Icons/sort-24px.svg';
 
 
 export default class WarehouseList extends Component {
-    state = (
-        {
-            warehouse: [],
-            showModal: false,
-            
-        }
-    )
+    state = {
+        warehouse: [],
+        showModal: false,
+    }
     
-
     componentDidMount(){
         axios.get(warehouseAPI)
             .then((response) => {
@@ -34,7 +30,7 @@ export default class WarehouseList extends Component {
             })
     }
     
-    render(){
+    render() {
         
         if (this.state.warehouse === []){
             return <h1>Loading....</h1>
