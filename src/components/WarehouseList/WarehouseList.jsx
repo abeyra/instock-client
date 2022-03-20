@@ -4,6 +4,8 @@ import edit from '../../assets/icons/edit-24px.svg'
 import { Component } from 'react/cjs/react.production.min';
 import axios from 'axios';
 import Modal from '../Modal/Modal'
+import { Link } from 'react-router-dom';
+
 
 const URL = 'http://localhost:9000/warehouses/'
 
@@ -60,7 +62,9 @@ class WarehouseList extends Component {
                     <div className='header'>
                        {this.state.warehouse.map((item) => {
                            return(
-                             <div className='header__container' key={item.id}>
+                             <Link to={`/details/${item.id}`} >
+                                 <div className='header__container' key={item.id}>
+
                                 <div className='header__size'>
                                     <h3 className='list__field'>WAREHOUSE</h3>
                                     <p className='list__record'>{item.name}</p>
@@ -75,7 +79,7 @@ class WarehouseList extends Component {
                                     <p className='list__record'>{item.contact.phone} {item.contact.email}</p>
                                     <img className='header__edit' alt='edit pencil icon' src={edit}  />
                                 </div>    
-                            </div>  
+                            </div> </Link>  
                            )  
                        })} 
                        

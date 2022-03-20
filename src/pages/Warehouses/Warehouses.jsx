@@ -29,7 +29,7 @@ export default class Warehouses extends Component {
           <CardHeader text="Warehouse" />
           <div className="card__cta">
             <Search placeholder="Search.." />
-            <Button text="warehouse" />
+            <Button text="Add warehouse" />
           </div>
         </div>
         <div>
