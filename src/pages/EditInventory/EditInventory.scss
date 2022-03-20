@@ -106,7 +106,10 @@
             border: 1px solid black;
             color: black; 
             cursor: pointer;
-            width: 47%;
+            width: 33%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         &-save {

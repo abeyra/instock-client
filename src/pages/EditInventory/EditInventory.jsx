@@ -197,9 +197,10 @@ export default class EditInventory extends Component {
                     
                     <div className="item-details__buttons">
                    
-                            <button className="item-details__buttons-cancel">Cancel</button>
-                     
-                            <button className="item-details__buttons-save">Save</button>
+                      <Link to="/inventory" className="item-details__buttons-cancel">
+                        <div className="">Cancel</div>
+                      </Link>
+                      <button className="item-details__buttons-save">Save</button>
                      
                     </div>
                   </div>
