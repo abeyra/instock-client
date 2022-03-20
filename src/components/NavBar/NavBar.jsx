@@ -1,5 +1,5 @@
 import './NavBar.scss';
-import Logo from '../../assets/Logo/InStock-Logo.svg';
+import Logo from '../../assets/logo/InStock-Logo.svg';
 import { NavLink } from 'react-router-dom';
 
 

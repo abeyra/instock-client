@@ -113,7 +113,26 @@
                 }
             }
 
-            &--stock {
+            &--stock[data-status="Out of Stock"] {
+                @include mobile-record-in-stock;
+                background-color: green;
+                background: red;
+                border-radius: $radius;
+                height: 1.5rem;
+                text-transform: uppercase;
+                margin: 0 0 .85rem 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @include tablet {
+                    @include deskntab-record-in-stock;
+                    display: flex;
+                    align-items: center;
+                    margin: 1rem 0;
+                } 
+            }
+            &--stock[data-status="In Stock"] {
                 @include mobile-record-in-stock;
                 background-color: green;
                 background: rgba(21, 132, 99, 0.07);
