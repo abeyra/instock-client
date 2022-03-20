@@ -3,9 +3,10 @@ import Trash  from '../../assets/icons/delete_outline-24px.svg';
 import Edit from '../../assets/icons/edit-24px.svg';
 import Chevron from '../../assets/icons/chevron_right-24px.svg';
 
-export default function Item({ itemName, category, status, quantity, warehouseName  }) {
+export default function Item({ handleClick, id, itemName, category, status, quantity, warehouseName  }) {
     return (
         <>
+        
         <div className="list__tablet">
             <li className="list">
                 <div className="list__1">
@@ -57,6 +58,7 @@ export default function Item({ itemName, category, status, quantity, warehouseNa
                         <img className="list__delete" 
                         src={Trash} 
                         alt="Delete icon."
+                        
                         />
                     </div>
                         <div className="list__icons--2">
@@ -72,6 +74,7 @@ export default function Item({ itemName, category, status, quantity, warehouseNa
                         <img className="list__delete" 
                         src={Trash} 
                         alt="Delete icon."
+                        onClick={() => handleClick( true, id, itemName)}
                         />
                     </div>
                         <div className="list__icons--2">

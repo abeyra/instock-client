@@ -1,10 +1,24 @@
 import './ItemList.scss';
 import Item from '../Item';
 import Sort from '../../assets/icons/sort-24px.svg';
+import Modal from '../Modal/Modal';
+import { useState } from 'react';
 
 export default function ItemList({ list }) {
+
+    const [show, setShow] = useState(false)
+    const [ID, setID] = useState('')
+    const [name, setName] = useState('')
+
+    function handleClick(truefalse, id, itemName,){
+        console.log(truefalse, id, itemName)
+        setShow(truefalse)
+        setID(id)
+        setName(itemName)
+    }
     return (
         <>
+        <Modal onClose={() => setShow(false)} show={show} id={ID} name={name} route='inventory'  />
         <section>
             <div className="field">
                 <div className="field__section">
@@ -61,10 +75,12 @@ export default function ItemList({ list }) {
                         Action
                     </h4>
             </div>
+            
                 <ul>
                     {list.map(inventory => {
                         return (
                             <Item
+                            handleClick = {handleClick}
                             key={inventory.id}
                             id={inventory.id}
                             warehouseId={inventory.warehouseID}
