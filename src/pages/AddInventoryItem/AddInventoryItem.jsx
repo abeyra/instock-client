@@ -2,7 +2,6 @@ import './AddInventoryItem.scss';
 import backArrow from '../../assets/icons/arrow_back-24px.svg';
 import { Link } from 'react-router-dom';
 import CardHeader from "../../components/CardHeader";
-import Button from '../../components/Button';
 import { Component } from 'react';
 import axios from 'axios';
 
