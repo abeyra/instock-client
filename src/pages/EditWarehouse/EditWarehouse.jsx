@@ -97,8 +97,8 @@ export default class Inventory extends Component {
         }
       })
       .then (res => {
-        this.props.history.push(`/warehouses/${id}`)
-        return this.props.onChangeHandler(res.data)
+        alert('warehouse edited');
+        this.props.history.push(`/warehouses`)
       })
       .catch(err => {
         console.log(err)

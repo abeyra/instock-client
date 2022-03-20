@@ -77,7 +77,9 @@ export default class WarehouseList extends Component {
         <div className="header">
           {this.state.warehouse.map((item) => {
             return (
+              <Link to={`/details/${item.id}`}>
               <div className="header__container" key={item.id}>
+              
                 <div className="warehouse-list">
                   <div className="warehouse-list__1">
                     <h4 className="warehouse-list__field">Warehouse</h4>
@@ -158,6 +160,7 @@ export default class WarehouseList extends Component {
                   </div>
                 </div>
               </div>
+              </Link>
             );
           })}
         </div>
