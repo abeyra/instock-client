@@ -6,6 +6,12 @@
 @use '../../styles/partials/mobile-fonts' as *;
 @use '../../styles/partials/deskntab-fonts' as *;
 
+.warehouse-list:hover {
+    @include desktop {
+        background-color: $table-record-hover-color;
+    }
+}
+
 .warehouse-list {
     border-top: 1px solid $outline;
     padding: 1rem 1.5rem 0 1.5rem;
