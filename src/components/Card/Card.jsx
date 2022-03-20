@@ -14,7 +14,7 @@ export default function Card() {
         <article className="card">
             <Switch>
                 <Route path="/" exact component={Warehouses} />
-                <Route path="/warehouses" component={Warehouses} />
+                <Route path="/warehouses" exact component={Warehouses} />
                 <Route path="/inventory" component={Inventory} />
                 {/* <Route path="/" component={} /> */}
                 <Route path="/warehouses/add" component={AddWarehouse} />

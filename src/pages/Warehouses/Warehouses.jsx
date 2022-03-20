@@ -31,7 +31,7 @@ export default class Warehouses extends Component {
           <CardHeader text="Warehouse" />
           <div className="card__cta">
             <Search placeholder="Search.." />
-            <Link to='/warehouses/add' component={AddWarehouse}><Button text="Add warehouse" /></Link>
+            <Link to='/warehouses/add' ><Button text="Add warehouse" /></Link>
           </div>
         </div>
         <div>
