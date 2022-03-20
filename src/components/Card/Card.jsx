@@ -1,5 +1,8 @@
 import './Card.scss'; 
-import {Switch, Route} from 'react-router-dom';
+import Search from '../Search';
+import Button from '../Button';
+import CardHeader from '../CardHeader';
+import {Switch, Route, Link} from 'react-router-dom';
 import Warehouses from '../../pages/Warehouses';
 import Inventory from '../../pages/Inventory';
 import InventoryDetails from '../../pages/InventoryDetails';
