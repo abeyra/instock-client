@@ -58,6 +58,30 @@ export default class AddInventoryItem extends Component {
         event.preventDefault();
         console.log('in submit');
 
+        if(!event.target.warehouseName.value) {
+          alert('please fill out warehouse name');
+        }
+
+        else if (!event.target.itemName.value) {
+          alert('please fill out item name');
+        }
+
+        else if (!event.target.description.value) {
+          alert('please fill out descrption');
+        }
+
+        else if (!event.target.category.value) {
+          alert('please fill out category field');
+        }
+
+        else if (!event.target.status.value) {
+          alert('please fill out status field');
+        }
+
+        else if (!event.target.quantity.value) {
+          alert('please fill out quantity field');
+        }
+
         axios.post("http://localhost:9000/inventories", {
             warehouseName: event.target.warehouseName.value,
             itemName: event.target.itemName.value,
@@ -66,12 +90,6 @@ export default class AddInventoryItem extends Component {
             status: event.target.status.value,
             quantity: event.target.quantity.value
         }) 
-
-        return (
-            <Route>
-                <Redirect to='/inventories' />
-            </Route>
-        )
       
     }
 
@@ -170,7 +188,9 @@ export default class AddInventoryItem extends Component {
                        
                         <div className="new-item__buttons">
                    
-                            <button className="new-item__buttons-cancel">Cancel</button>
+                            <Link className='new-item__buttons-cancel' to='/inventory'>
+                            <div className="">Cancel</div>
+                            </Link>
                      
                             <button className="new-item__buttons-submit">+ Add Item</button>
                      

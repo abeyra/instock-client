@@ -37,7 +37,9 @@
             @include mobile-searchbar;
             box-sizing: border-box;
             width: 100%;
+            height: 6rem;
             margin: 8px 0;
+            resize: none;
         }
     }
 
@@ -95,7 +97,10 @@
             border: 1px solid black;
             color: black; 
             cursor: pointer;
-            width: 47%;
+            width: 33%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         &-submit {
