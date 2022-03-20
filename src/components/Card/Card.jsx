@@ -6,6 +6,7 @@ import {Switch, Route} from 'react-router-dom';
 import Warehouses from '../../pages/Warehouses';
 import Inventory from '../../pages/Inventory';
 import Inventory_details from '../../pages/Inventory_details';
+import AddWarehouse from '../../pages/AddWarehouse/AddWarehouse';
 
 export default function Card() {
     return (
@@ -15,8 +16,8 @@ export default function Card() {
                 <Route path="/" exact component={Warehouses} />
                 <Route path="/warehouses" component={Warehouses} />
                 <Route path="/inventory" component={Inventory} />
-                {/* <Route path="/" component={} />
-                <Route path="/" component={} /> */}
+                {/* <Route path="/" component={} /> */}
+                <Route path="/warehouses/add" component={AddWarehouse} />
                 <Route path="/inventory/details" component={Inventory_details} />
                 {/* <Route path="/" component={} />
                 <Route path="/" component={} />

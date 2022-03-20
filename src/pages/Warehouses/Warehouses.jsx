@@ -2,11 +2,9 @@ import "./Warehouses.scss";
 import Search from '../../components/Search';
 import Button from '../../components/Button';
 import CardHeader from '../../components/CardHeader';
-import PhilsCard from "../../components/PhilsCard/PhilsCard";
-import Search from "../../components/Search";
-import Button from "../../components/Button";
-import CardHeader from "../../components/CardHeader";
 import WarehouseList from "../../components/WarehouseList/WarehouseList";
+import AddWarehouse from "../AddWarehouse/AddWarehouse";
+import { Link } from "react-router-dom";
 import { Component } from "react/cjs/react.development";
 
 // const URL = "http://localhost:9000/warehouses/";
@@ -33,7 +31,7 @@ export default class Warehouses extends Component {
           <CardHeader text="Warehouse" />
           <div className="card__cta">
             <Search placeholder="Search.." />
-            <Button text="warehouse" />
+            <Link to='/warehouses/add' component={AddWarehouse}><Button text="Add warehouse" /></Link>
           </div>
         </div>
         <div>
