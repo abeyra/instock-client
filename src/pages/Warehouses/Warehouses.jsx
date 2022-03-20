@@ -2,10 +2,6 @@ import "./Warehouses.scss";
 import Search from '../../components/Search';
 import Button from '../../components/Button';
 import CardHeader from '../../components/CardHeader';
-import PhilsCard from "../../components/PhilsCard/PhilsCard";
-import Search from "../../components/Search";
-import Button from "../../components/Button";
-import CardHeader from "../../components/CardHeader";
 import WarehouseList from "../../components/WarehouseList/WarehouseList";
 import { Component } from "react/cjs/react.development";
 

@@ -1,10 +1,10 @@
 import './Item.scss';
-import Trash  from '../../assets/icons/delete_outline-24px.svg';
-import Edit from '../../assets/icons/edit-24px.svg';
-import Chevron from '../../assets/icons/chevron_right-24px.svg';
+import Trash  from '../../assets/Icons/delete_outline-24px.svg';
+import Edit from '../../assets/Icons/edit-24px.svg';
+import Chevron from '../../assets/Icons/chevron_right-24px.svg';
 import { Link } from 'react-router-dom';
 
-export default function Item({ itemName, category, status, quantity, warehouseName  }) {
+export default function Item({ itemName, category, status, quantity, warehouseName, item  }) {
     return (
         <>
         <div className="list__tablet">
@@ -14,20 +14,9 @@ export default function Item({ itemName, category, status, quantity, warehouseNa
                         Inventory Item
                     </h4>
                         <div className="list__link">
-                            <Link to={{
-                                path: "inventory/details",
-                                state: {
-                                    itemName: itemName,
-                                    category: category,
-                                    status: status,
-                                    quantity: quantity,
-                                    warehouseName: warehouseName
-                                },
-                            }} >
-                                <h3 className="list__record list__record--link">
-                                    {itemName}
-                                </h3>
-                            </Link>
+                            <h3 className="list__record list__record--link">
+                                {itemName}
+                            </h3>
                             <img
                             className="list__link--icon" 
                             src={Chevron}
@@ -84,6 +73,9 @@ export default function Item({ itemName, category, status, quantity, warehouseNa
                         <img className="list__delete" 
                         src={Trash} 
                         alt="Delete icon."
+                        onClick={() => this.setState(
+                            {showModal: true, id: item.id, name: item.name}
+                        )}
                         />
                     </div>
                         <div className="list__icons--2">

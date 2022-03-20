@@ -15,13 +15,13 @@ export default class Inventory extends Component {
 
     componentDidMount() {
         axios
-            .get("http://localhost:9000/inventories")
+            .get(listAPI)
             .then(response => {
               console.log('I am in Axious')
                 this.setState({
                     list: response.data
                 })
-                })
+            })
             .catch(err => console.log(err))
     }
 
