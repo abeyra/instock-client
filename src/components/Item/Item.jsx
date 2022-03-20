@@ -4,9 +4,11 @@ import Edit from '../../assets/icons/edit-24px.svg';
 import Chevron from '../../assets/icons/chevron_right-24px.svg';
 import { Link } from 'react-router-dom';
 
-export default function Item({ id, itemName, category, status, quantity, warehouseName  }) {
+export default function Item({ handleClick, id, itemName, category, status, quantity, warehouseName  }) {
+
     return (
         <>
+        
         <div className="list__tablet">
             <li className="list">
                 <div className="list__1">
@@ -38,7 +40,7 @@ export default function Item({ id, itemName, category, status, quantity, warehou
                             Status
                         </h4>
                             <div className="list__stock-tablet">
-                                <h3 className="list__record list__record--stock">
+                                <h3 className='list__record list__record--stock' data-status={status}>
                                     {status}
                                 </h3>
                             </div>
@@ -61,6 +63,7 @@ export default function Item({ id, itemName, category, status, quantity, warehou
                         <img className="list__delete" 
                         src={Trash} 
                         alt="Delete icon."
+                        onClick={() => handleClick( true, id, itemName)}
                         />
                     </div>
                         <div className="list__icons--2">
@@ -76,6 +79,7 @@ export default function Item({ id, itemName, category, status, quantity, warehou
                         <img className="list__delete" 
                         src={Trash} 
                         alt="Delete icon."
+                        onClick={() => handleClick( true, id, itemName)}
                         />
                     </div>
                         <div className="list__icons--2">

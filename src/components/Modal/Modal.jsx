@@ -1,12 +1,18 @@
-import { Component } from "react/cjs/react.development";
 import './Modal.scss'
 import axios from 'axios'
+import close from '../../assets/icons/close-24px.svg'
 
 function Modal(props) {
 
-        function handleClick(id){
-            console.log('in the click')
-            axios.delete('http://localhost:9000/warehouses/delete/'+id)
+        let firstMsg='';
+        let locationMsg ='';
+
+        function handleClick(id, route){
+            let url=''
+            if (route === 'warehouse') url='http://localhost:9000/warehouses/delete/'
+            if (route === 'inventory') url='http://localhost:9000/inventories/delete/'
+            console.log('This is the route', route)
+            axios.delete(url+id)
             .then((response) => {
                 console.log(response.data)
                 props.onClose()
@@ -20,18 +26,27 @@ function Modal(props) {
             return null
         }
 
-        const modalMessage = `Please confirm that youd like to delete the ${props.name} from the list of warehouses. You won't be able to undo this action.`
-        console.log('In the Medal id: ', props.id)
-        console.log('In the Medal name: ', props.name)
+        if (props.route === 'warehouse') firstMsg = `the ${props.name}`
+        if (props.route === 'inventory') firstMsg = `${props.name}`
+        
+        if (props.route === 'warehouse') locationMsg = `the list of warehouses`
+        if (props.route === 'inventory') locationMsg = `inventory list`
+
+        const modalMessage = `Please confirm that youd like to delete ${firstMsg} from the ${locationMsg}. You won't be able to undo this action.`
 
         return(
             <div className="modal" onClick={props.onClose}>
                 <div className="modal__content" onClick={e => e.stopPropagation()}>
-                    <h1>Delete {props.name} warehouse?</h1>
+                    <div className='modal__content-close'><img onClick={props.onClose} src={close} alt="Close X Icon"/></div>
+                    <h2>Delete {props.name} warehouse?</h2>
                     <p>{modalMessage}</p>
-                    <button className="modal__button-cancel" onClick={props.onClose}>Cancel</button>
-                    {/* <button className="modal__button-delete" onClick={() => {console.log(`Going to Delete ${props.id} using API`)}}>Delete</button> */}
-                    <button className="modal__button-delete" onClick={() => handleClick(props.id)}>Delete</button>
+                    
+                    <div className='modal__buttons-container'>
+                        <ul className="modal__buttons">
+                            <li><button className="modal__button-cancel" onClick={props.onClose}>Cancel</button></li>
+                            <li><button className="modal__button-delete" onClick={() => handleClick(props.id, props.route)}>Delete</button></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         )
