@@ -3,8 +3,8 @@ import './WarehouseList.scss';
 import Search from '../Search';
 import Button from '../Button';
 import CardHeader from '../CardHeader';
-import trash from '../../assets/icons/delete_outline-24px.svg';
-import edit from '../../assets/icons/edit-24px.svg'
+import trash from '../../assets/Icons/delete_outline-24px.svg';
+import edit from '../../assets/Icons/edit-24px.svg'
 import { Component } from 'react/cjs/react.production.min';
 import axios from 'axios';
 import Modal from '../Modal/Modal'
