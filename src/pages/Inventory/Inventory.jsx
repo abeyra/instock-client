@@ -4,6 +4,7 @@ import Search from "../../components/Search";
 import Button from "../../components/Button";
 import ItemList from "../../components/ItemList";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { listAPI } from "../../util/listAPI";
 import "./Inventory.scss";
 
@@ -32,7 +33,9 @@ export default class Inventory extends Component {
           <div className="card__cta">
             <Search placeholder="Search..." />
             <div className="card__btn">
-              <Button text="+ Add New Item" />
+              <Link to="/addinventoryitem">
+                <Button text="+ Add New Item" />
+              </Link>
             </div>
           </div>
         </div>

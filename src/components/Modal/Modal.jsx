@@ -1,11 +1,12 @@
 import './Modal.scss'
 import axios from 'axios'
-import close from '../../assets/icons/close-24px.svg'
+import close from '../../assets/Icons/close-24px.svg';
 
 function Modal(props) {
 
         let firstMsg='';
         let locationMsg ='';
+        let headerMsg = '';
 
         function handleClick(id, route){
             let url=''
@@ -26,26 +27,45 @@ function Modal(props) {
             return null
         }
 
-        if (props.route === 'warehouse') firstMsg = `the ${props.name}`
+        if (props.route === 'warehouse') firstMsg = `${props.name}`
         if (props.route === 'inventory') firstMsg = `${props.name}`
         
         if (props.route === 'warehouse') locationMsg = `the list of warehouses`
         if (props.route === 'inventory') locationMsg = `inventory list`
 
-        const modalMessage = `Please confirm that youd like to delete ${firstMsg} from the ${locationMsg}. You won't be able to undo this action.`
+        if (props.route === 'warehouse') headerMsg = `Warehouse`
+        if (props.route === 'inventory') headerMsg = `Inventory Item`
+
+        const modalMessage = `Please confirm that you\'d like to delete ${firstMsg} from the ${locationMsg}. 
+        You won't be able to undo this action.`
+
+        const modalHeader = `Delete ${props.name} ${headerMsg} ?`
 
         return(
             <div className="modal" onClick={props.onClose}>
-                <div className="modal__content" onClick={e => e.stopPropagation()}>
-                    <div className='modal__content-close'><img onClick={props.onClose} src={close} alt="Close X Icon"/></div>
-                    <h2>Delete {props.name} warehouse?</h2>
-                    <p>{modalMessage}</p>
-                    
-                    <div className='modal__buttons-container'>
-                        <ul className="modal__buttons">
-                            <li><button className="modal__button-cancel" onClick={props.onClose}>Cancel</button></li>
-                            <li><button className="modal__button-delete" onClick={() => handleClick(props.id, props.route)}>Delete</button></li>
-                        </ul>
+                <div className="modal__content" 
+                onClick={e => e.stopPropagation()}>
+                    <div className='modal__content-close'>
+                        <img onClick={props.onClose} src={close} alt="Close X Icon"/>
+                    </div>
+                        <h1 className="modal__header">
+                            {modalHeader}
+                        </h1>
+                        <p className="modal__message">
+                            {modalMessage}
+                        </p>
+                        
+                        <div className='modal__buttons-container'>
+                            <div className="modal__buttons">
+                                <button className="modal__button-cancel" 
+                                onClick={props.onClose}>
+                                    Cancel
+                                </button>
+                                <button className="modal__button-delete" 
+                                onClick={() => handleClick(props.id, props.route)}>
+                                    Delete
+                                </button>
+                            </div>
                     </div>
                 </div>
             </div>
