@@ -10,7 +10,7 @@ function Modal(props) {
         function handleClick(id, route){
             let url=''
             if (route === 'warehouse') url='http://localhost:9000/warehouses/delete/'
-            if (route === 'inventory') url='http://localhost:9000/svsdf/'
+            if (route === 'inventory') url='http://localhost:9000/inventories/delete/'
             console.log('This is the route', route)
             axios.delete(url+id)
             .then((response) => {

@@ -35,7 +35,7 @@ export default function Item({ handleClick, id, itemName, category, status, quan
                             Status
                         </h4>
                             <div className="list__stock-tablet">
-                                <h3 className="list__record list__record--stock">
+                                <h3 className='list__record list__record--stock' data-status={status}>
                                     {status}
                                 </h3>
                             </div>
@@ -58,7 +58,7 @@ export default function Item({ handleClick, id, itemName, category, status, quan
                         <img className="list__delete" 
                         src={Trash} 
                         alt="Delete icon."
-                        
+                        onClick={() => handleClick( true, id, itemName)}
                         />
                     </div>
                         <div className="list__icons--2">
