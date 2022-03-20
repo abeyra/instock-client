@@ -4,3 +4,125 @@
 @use '../../styles/partials/buttons-text-links' as *;
 @use '../../styles/partials/pad-marg' as *;
 @use '../../styles/partials/mobile-fonts' as *;
+
+.item {
+    border-top: 1px solid $outline;
+    padding: 1rem 1.5rem 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        // justify-content: flex-start;
+        padding: 1rem 2rem;
+    }
+
+    @include desktop {
+        padding: 0 2.5rem;
+    }
+
+    &__field {
+        @include mobile-field-txt;
+    }
+
+    &__record {
+        @include mobile-record-txt;
+        margin-bottom: 1rem;
+
+        &--description {
+            @include tablet {
+                max-width: 75%;
+            }
+        }
+
+        &--stock {
+             @include mobile-record-in-stock;
+                background-color: green;
+                background: rgba(21, 132, 99, 0.07);
+                border-radius: $radius;
+                width: 60px;
+                height: 1.5rem;
+                text-transform: uppercase;
+                margin: 0 0 .85rem 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+        }
+    }
+
+    &__inventory-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include tablet {
+            padding-left: 2rem;
+            border-left: .0625rem solid $divider;
+            width: 50%;
+        }
+    }
+
+    &__stock-info {
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet {
+            justify-content: initial;
+        }
+    }
+
+    &__quantity-container {
+        margin-right: 25%;
+
+        @include tablet {
+            margin-left: 30%;
+            margin-right: 0;
+        }
+    }
+}
+
+.card-header {
+    @include tablet {
+        padding-left: .5rem; 
+    }
+}
+
+.card__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+
+    @include tablet {
+        padding: 0 2rem;
+    }
+}
+
+.card__button {
+    background-color: blue;
+    border-radius: 50%;
+    padding: .3125rem;
+    position: absolute;
+    right: 1rem;
+
+    @include tablet {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-radius: 25px;
+        right: 2rem;
+        height: 22px;
+        width: 49px;
+    }
+
+    &-text {
+        display: none;
+
+        @include tablet {
+            display: block;
+            color: white;
+            font-size: 14px;
+        }
+    }
+}

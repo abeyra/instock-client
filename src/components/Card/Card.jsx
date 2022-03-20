@@ -13,11 +13,11 @@ export default function Card() {
         <article className="card">
             <Switch>
                 <Route path="/" exact component={Warehouses} />
-                <Route path="/warehouses" component={Warehouses} />
-                <Route path="/inventory" component={Inventory} />
+                <Route path="/warehouses" exact component={Warehouses} />
+                <Route path="/inventory" exact component={Inventory} />
+                <Route path="/inventory/:id" component={InventoryDetails} />
                 {/* <Route path="/" component={} />
                 <Route path="/" component={} /> */}
-                <Route path="/inventory/details" component={InventoryDetails} />
                 {/* <Route path="/" component={} />
                 <Route path="/" component={} />
                 <Route path="/" component={} /> */}
