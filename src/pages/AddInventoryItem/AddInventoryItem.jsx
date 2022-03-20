@@ -40,7 +40,7 @@ export default class AddInventoryItem extends Component {
                 instock: "In Stock"
             })
            document.querySelector(".new-item__quantity").classList.remove("new-item__quantity--hidden");
-      
+           document.querySelector(".new-item__status-options-2").classList.add("new-item__status-options-2--opacity"); 
         } else {
             this.setState({
                 radioToggle1: false,
@@ -104,31 +104,33 @@ export default class AddInventoryItem extends Component {
                 </div>
 
                 <form className="new-item" onSubmit={this.handleSubmit}>
-                    <h2 className="new-item__title">Item Details</h2>  
+                    <div className="item-details-container">
+                        <h2 className="new-item__title">Item Details</h2>  
 
-                    <div className="new-item__name">
-                        <h4 className="new-item__label">Item Name</h4>
-                        <input className="new-item__name-input" type="text" name="itemName" placeholder="Item Name"/>    
-                    </div>
+                        <div className="new-item__name">
+                            <h4 className="new-item__label">Item Name</h4>
+                            <input className="new-item__name-input" type="text" name="itemName" placeholder="Item Name"/>    
+                        </div>
 
-                    <div className="new-item__description">
-                        <h4 className="new-item__label">Description</h4>
-                        <textarea className="new-item__description-input" type="text" name="description" placeholder="Please enter a brief item description."/>
-                    </div>
+                        <div className="new-item__description">
+                            <h4 className="new-item__label">Description</h4>
+                            <textarea className="new-item__description-input" type="text" name="description" placeholder="Please enter a brief item description."/>
+                        </div>
 
-                    <div className="new-item__category">
-                        <h4 className="new-item__label">Category</h4>
-                        <select className="new-item__category-input" name="category" id="">
-                             <option value="default">Please select</option>
-                             {this.state.inventoryData.filter((value, index, self) => index === self.findIndex((a) => a.category === value.category))
-                                .map((data) => {
-                                    return (
-                                        <option key={data.id} value={data.category}>
-                                            {data.category}    
-                                        </option>
-                                    )
-                                })}
-                        </select>
+                        <div className="new-item__category">
+                            <h4 className="new-item__label">Category</h4>
+                            <select className="new-item__category-input" name="category" id="">
+                                <option value="default">Please select</option>
+                                {this.state.inventoryData.filter((value, index, self) => index === self.findIndex((a) => a.category === value.category))
+                                    .map((data) => {
+                                        return (
+                                            <option key={data.id} value={data.category}>
+                                                {data.category}    
+                                            </option>
+                                        )
+                                    })}
+                            </select>
+                        </div>
                     </div>
 
                     <div className="new-item__availability">
@@ -138,7 +140,7 @@ export default class AddInventoryItem extends Component {
                          
                                 <h4 className="new-item__status-label">Status</h4>
                                    <div className="new-item__status-options">
-                                       <div>
+                                       <div className="new-item__status-options-1">
                                             <input
                                                 className="radio-input1"
                                                 type="radio"
@@ -149,7 +151,7 @@ export default class AddInventoryItem extends Component {
                                             />
                                             <label htmlFor="" className="radio-input1-label">In Stock</label>
                                         </div>
-                                        <div>
+                                        <div className="new-item__status-options-2 new-item__status-options-2--opacity">
                                             <input
                                                 className="radio-input2"
                                                 type="radio"
@@ -170,7 +172,7 @@ export default class AddInventoryItem extends Component {
 
                         <div className="new-item__warehouse">
                             <h4 className="new-item__label">Warehouse</h4>
-                            <select className="new-item__quantity-input" name="warehouseName" id="" placeholder="Please select">
+                            <select className="new-item__warehouse-input" name="warehouseName" id="" placeholder="Please select">
                                 <option value="default">Please select</option>
                                 {this.state.inventoryData.filter((value, index, self) => index === self.findIndex((a) => a.warehouseName === value.warehouseName))
                                 .map((data) => {

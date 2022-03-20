@@ -12,9 +12,31 @@
     display: flex;
     flex-direction: column;
 
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .item-details-container {
+        @include tablet {
+            width: 45%;
+            border-right: 1px solid $divider;
+            padding-right: 2.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @include desktop {
+            padding-left: 1rem; 
+        }
+    }
+
     &__title {
         font-size: 24px;
         margin-bottom: 1rem;
+
+        @include desktop {
+            margin-bottom: 2.5rem;
+        }
     }
 
     &__label {
@@ -32,6 +54,10 @@
     }
 
     &__description {
+
+        @include desktop {
+            padding: 1rem 0;
+        }
 
         &-input {
             @include mobile-searchbar;
@@ -55,6 +81,11 @@
 
     &__availability {
         padding-top: 1rem;
+
+        @include tablet {
+            width: 45%; 
+            padding-top: 0;
+        }
     }
 
     &__status {
@@ -66,6 +97,20 @@
         &-options {
             display: flex;
             justify-content: space-between;
+
+            @include tablet {
+                justify-content: flex-start
+            }
+
+            &-1 {
+                margin-right: 15%;
+            }
+
+            &-2 {
+                &--opacity {
+                    opacity: .5;
+                }
+            }
         }
     }
 
@@ -78,10 +123,24 @@
             box-sizing: border-box;
             width: 100%;
             margin: 8px 0;
+
+            @include desktop {
+                width: 32%;
+            }
         }
 
         &--hidden {
             display: none;
+        }
+    }
+
+    &__warehouse {
+
+        &-input {
+            @include mobile-searchbar;
+            box-sizing: border-box;
+            width: 100%;
+            margin: 8px 0;
         }
     }
 
@@ -91,16 +150,24 @@
         justify-content: space-between;
         margin: 2rem 0 1rem 0;
 
+        @include tablet {
+            justify-content: flex-end;
+        }
+
         &-cancel {
             @include mobile-primary-cta-dflt;
             background-color: white;
-            border: 1px solid black;
+            border: 1px solid $outline;
             color: black; 
             cursor: pointer;
             width: 33%;
             display: flex;
             align-items: center;
             justify-content: center;
+
+            @include tablet {
+                width: 18%; 
+            }
         }
 
         &-submit {
@@ -108,6 +175,19 @@
             cursor: pointer;
             color: white;
             width: 47%;
+
+            @include tablet {
+                width: 32%; 
+                margin-left: 4%;
+            }
         }
     }
+}
+
+.radio-input1 {
+    margin-right: 0.5rem;
+}
+
+.radio-input2 {
+    margin-right: 0.5rem;
 }
